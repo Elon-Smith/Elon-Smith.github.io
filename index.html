@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能制造工作室 / Elon-Smith</title>
+    <meta
+      name="description"
+      content="智能制造工作室 / Elon-Smith 的个人网站预览，展示智能硬件、物联网、4G 通信与实用工具项目。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="返回首页">
+          <span class="brand-mark">IC</span>
+          <span>智能制造工作室 / Elon-Smith</span>
+        </a>
+        <nav class="topnav" aria-label="主导航">
+          <a href="#projects">项目</a>
+          <a href="#skills">技能</a>
+          <a href="#notes">记录</a>
+          <a href="#contact">联系</a>
+        </nav>
+        <div class="top-stats" aria-label="站点状态">
+          <span><b>12</b> 设备在线</span>
+          <span><b>1,284</b> 今日消息</span>
+          <span><b>56 天</b> 运行时长</span>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero-grid" aria-label="个人主页首屏">
+          <aside class="identity-panel">
+            <div class="avatar-wrap">
+              <img src="assets/avatar.png" alt="智能制造工作室头像" />
+              <span class="online-dot" aria-label="在线"></span>
+            </div>
+            <p class="eyebrow">Smart Hardware / IoT / Tools</p>
+            <h1>智能硬件与物联网创作者</h1>
+            <p class="hero-copy">
+              让电路、网络和真实设备协同工作。专注于智能硬件、物联网和嵌入式系统的设计与实现，提供从原型到量产的完整闭环方案。
+            </p>
+
+            <div class="link-row">
+              <a class="action-link" href="https://github.com/Elon-Smith" target="_blank" rel="noreferrer">
+                <span>GitHub</span>
+                <small>github.com/Elon-Smith</small>
+              </a>
+              <a class="action-link" href="https://oshwhub.com/gbn2333/works" target="_blank" rel="noreferrer">
+                <span>OSHWHub</span>
+                <small>oshwhub.com/gbn2333</small>
+              </a>
+            </div>
+
+            <div class="mini-metrics" aria-label="个人数据">
+              <div>
+                <span>项目</span>
+                <strong>28</strong>
+              </div>
+              <div>
+                <span>硬件设计</span>
+                <strong>16</strong>
+              </div>
+              <div>
+                <span>设备在线</span>
+                <strong>12</strong>
+              </div>
+              <div>
+                <span>提交次数</span>
+                <strong>1,392</strong>
+              </div>
+            </div>
+
+            <div class="system-line">
+              <span>系统状态</span>
+              <b>MQTT 连接正常</b>
+              <b>4G 信号良好</b>
+              <b>服务器运行正常</b>
+            </div>
+          </aside>
+
+          <section class="project-console" aria-label="旗舰项目">
+            <div class="console-header">
+              <div>
+                <p class="eyebrow live">旗舰项目</p>
+                <h2>4G 智能远程通断器</h2>
+                <p>
+                  基于 Air780E 的 4G 无线通断器，支持小程序控制、4 路继电器输出、温湿度采集、433 遥控与本地联动。
+                </p>
+              </div>
+              <a class="ghost-button" href="https://oshwhub.com/gbn2333/outdoor-camping-microwave-radar-alarm" target="_blank" rel="noreferrer">
+                查看项目详情
+              </a>
+            </div>
+
+            <div class="device-stage">
+              <img src="assets/relay-board-1.png" alt="4G 智能远程通断器硬件照片" />
+            </div>
+
+            <div class="tech-strip" aria-label="技术标签">
+              <div><span>A7</span><b>Air780E</b><small>4G 通信</small></div>
+              <div><span>MQ</span><b>MQTT</b><small>消息协议</small></div>
+              <div><span>R4</span><b>4 Relay</b><small>继电器输出</small></div>
+              <div><span>S3</span><b>SHT30</b><small>温湿度采集</small></div>
+              <div><span>RF</span><b>433 Remote</b><small>无线遥控</small></div>
+            </div>
+
+            <div class="telemetry">
+              <div class="telemetry-row">
+                <div><span>设备在线</span><strong>8</strong></div>
+                <div><span>今日触发</span><strong>342 次</strong></div>
+                <div><span>温度</span><strong>25.6 °C</strong></div>
+                <div><span>湿度</span><strong>56.3 %RH</strong></div>
+                <div><span>信号强度</span><strong>-73 dBm</strong></div>
+                <div><span>固件版本</span><strong>v1.2.3</strong></div>
+              </div>
+              <div class="chart-log-grid">
+                <div>
+                  <div class="chart-title">
+                    <span>实时数据 (24h)</span>
+                    <small><i class="blue-dot"></i>温度 <i class="green-dot"></i>湿度</small>
+                  </div>
+                  <canvas id="telemetryChart" width="760" height="180" aria-label="温湿度趋势图"></canvas>
+                </div>
+                <div class="log-panel">
+                  <span>实时日志</span>
+                  <ol>
+                    <li><time>12:14:32</time> 设备上线 device_8F3A</li>
+                    <li><time>12:14:28</time> 继电器 1 打开</li>
+                    <li><time>12:14:25</time> 温湿度上报 25.6 / 56.3</li>
+                    <li><time>12:14:20</time> 433 遥控触发 A1B2C3D4</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="project-track" id="projects" aria-label="项目轨迹">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Project Track</p>
+              <h2>项目轨迹</h2>
+            </div>
+            <div class="filter-tabs" role="tablist" aria-label="项目筛选">
+              <button class="active" data-filter="all" type="button">全部</button>
+              <button data-filter="hardware" type="button">硬件</button>
+              <button data-filter="software" type="button">工具</button>
+            </div>
+          </div>
+
+          <div class="project-list">
+            <article class="project-row" data-kind="hardware">
+              <img src="assets/relay-board-2.png" alt="4G 智能远程通断器实物" />
+              <div>
+                <h3>4G 智能远程通断器 <span>进行中</span></h3>
+                <p>4G + MQTT 远程控制，4 路继电器，温湿度采集，433 遥控。</p>
+              </div>
+              <time>2024-01 至今</time>
+              <dl>
+                <div><dt>协议</dt><dd>GPL 3.0</dd></div>
+                <div><dt>核心</dt><dd>Air780E</dd></div>
+                <div><dt>方向</dt><dd>IoT</dd></div>
+              </dl>
+              <a href="https://oshwhub.com/gbn2333/outdoor-camping-microwave-radar-alarm" target="_blank" rel="noreferrer">详情</a>
+            </article>
+
+            <article class="project-row" data-kind="hardware">
+              <img src="assets/relay-board-1.png" alt="FairyCloud AIR780E 4DB 项目图片" />
+              <div>
+                <h3>FairyCloud AIR780E 4DB <span>开源</span></h3>
+                <p>面向 4G 远程通断器的 Lua 硬件代码，包含 MQTT、配置与传感器逻辑。</p>
+              </div>
+              <time>2024-11</time>
+              <dl>
+                <div><dt>语言</dt><dd>Lua</dd></div>
+                <div><dt>模块</dt><dd>MQTT</dd></div>
+                <div><dt>许可</dt><dd>AGPL</dd></div>
+              </dl>
+              <a href="https://github.com/Elon-Smith/FairyCloud_AIR780E_4DB_PUBLIC" target="_blank" rel="noreferrer">详情</a>
+            </article>
+
+            <article class="project-row" data-kind="software">
+              <div class="text-thumb">TED</div>
+              <div>
+                <h3>TED Obsidian Notes <span>工具</span></h3>
+                <p>把 TED 演讲链接转成英语学习 Markdown 笔记，适配 Obsidian 工作流。</p>
+              </div>
+              <time>2026-05</time>
+              <dl>
+                <div><dt>语言</dt><dd>TypeScript</dd></div>
+                <div><dt>模型</dt><dd>Gemini</dd></div>
+                <div><dt>输出</dt><dd>Markdown</dd></div>
+              </dl>
+              <a href="https://github.com/Elon-Smith/TED-Obsidian-Notes" target="_blank" rel="noreferrer">详情</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="lower-grid">
+          <section class="skills-panel" id="skills" aria-label="技能矩阵">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Skill Matrix</p>
+                <h2>技能矩阵</h2>
+              </div>
+            </div>
+            <div class="skill-grid">
+              <span>PCB Design</span>
+              <span>Air780E</span>
+              <span>Lua</span>
+              <span>MQTT</span>
+              <span>4G 通信</span>
+              <span>SHT30</span>
+              <span>TypeScript</span>
+              <span>Gemini</span>
+              <span>Obsidian</span>
+            </div>
+          </section>
+
+          <section class="notes-panel" id="notes" aria-label="创作记录">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Build Notes</p>
+                <h2>创作记录</h2>
+              </div>
+            </div>
+            <ul>
+              <li><span>硬件复盘</span>4G 模组联网、继电器控制与小程序联动的调试记录</li>
+              <li><span>工具开发</span>把 TED 字幕整理成适合英语学习的 Obsidian 笔记</li>
+              <li><span>工程日志</span>从 PCB、固件、云端到真实设备的闭环经验</li>
+            </ul>
+          </section>
+        </section>
+
+        <section class="contact-band" id="contact">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>一起把硬件想法做成真实设备</h2>
+          </div>
+          <a href="mailto:gxbn_8848@163.com">gxbn_8848@163.com</a>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
