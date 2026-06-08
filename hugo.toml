@@ -1,0 +1,11 @@
+baseURL = 'https://beining.uk/'
+locale = 'zh-cn'
+title = 'BEINING.UK'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+description = '智能制造工作室 / Elon-Smith 的个人网站'
+
+[services]
+  [services.disqus]
+    shortname = 'beining-uk'
