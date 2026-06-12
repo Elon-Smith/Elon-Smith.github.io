@@ -70,11 +70,20 @@
                 <option
                   value="{{ "firmware/esp8266/manifest.json" | relURL }}"
                   data-chip="ESP8266"
-                  data-file="beining-esp8266-firmware.bin"
+                  data-file="moshengren-digital-grocery-v1.0.1.bin"
                   data-manifest="/firmware/esp8266/manifest.json"
                   data-boot="ESP8266 使用完整 4MB 镜像，烧录地址 0x000000；如连接失败，请让设备进入下载模式后再点击上传。"
                 >
-                  BEINING ESP8266 固件 / v1.0.1
+                  陌生人数码杂货铺 /v1.0.1
+                </option>
+                <option
+                  value="{{ "firmware/esp8266/original-v1.0/manifest.json" | relURL }}"
+                  data-chip="ESP8266"
+                  data-file="original-a01-015-03-a7.bin / original-filesystem-015-03-a7.bin"
+                  data-manifest="/firmware/esp8266/original-v1.0/manifest.json"
+                  data-boot="原版固件包含主程序 0x0 和文件系统 0x200000；请选择 ESP8266 串口，上传过程中不要断开设备。"
+                >
+                  原版固件 /v1.0
                 </option>
               </select>
             </label>
@@ -127,7 +136,7 @@
           <div>
             <span>1</span>
             <b>选择固件</b>
-            <p>先确认目标芯片，再选择对应的 BEINING 固件版本。</p>
+            <p>先确认目标芯片，再选择对应的固件版本。</p>
           </div>
           <div>
             <span>2</span>

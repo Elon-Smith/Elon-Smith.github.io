@@ -1,0 +1,20 @@
+{
+  "name": "原版固件",
+  "version": "v1.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        {
+          "path": "original-a01-015-03-a7.bin",
+          "offset": 0
+        },
+        {
+          "path": "original-filesystem-015-03-a7.bin",
+          "offset": 2097152
+        }
+      ]
+    }
+  ]
+}

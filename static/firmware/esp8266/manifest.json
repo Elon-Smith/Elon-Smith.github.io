@@ -1,5 +1,5 @@
 {
-  "name": "BEINING ESP8266 Firmware",
+  "name": "陌生人数码杂货铺",
   "version": "v1.0.1",
   "new_install_prompt_erase": true,
   "builds": [
@@ -7,7 +7,7 @@
       "chipFamily": "ESP8266",
       "parts": [
         {
-          "path": "beining-esp8266-firmware.bin",
+          "path": "moshengren-digital-grocery-v1.0.1.bin",
           "offset": 0
         }
       ]

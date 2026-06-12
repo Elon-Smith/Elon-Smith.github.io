@@ -3,7 +3,7 @@
 Published firmware for the Weather Ink Screen ESP8266 / A01 build:
 
 ```text
-beining-esp8266-firmware.bin
+moshengren-digital-grocery-v1.0.1.bin
 ```
 
 Current public version: `v1.0.1`.
@@ -21,4 +21,6 @@ Flash frequency: 40MHz
 Offset: 0x000000
 ```
 
-For ESP Web Tools, `manifest.json` points to `beining-esp8266-firmware.bin` with `offset: 0`.
+For ESP Web Tools, `manifest.json` points to `moshengren-digital-grocery-v1.0.1.bin` with `offset: 0`.
+
+The original two-part firmware used for comparison lives in `original-v1.0/`.
