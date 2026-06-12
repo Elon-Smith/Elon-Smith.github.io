@@ -1,13 +1,13 @@
 {
-  "name": "V14_Esp8266",
-  "version": "V14",
+  "name": "BEINING ESP8266 Firmware",
+  "version": "v1.0.1",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP8266",
       "parts": [
         {
-          "path": "V14_Esp8266.bin",
+          "path": "beining-esp8266-firmware.bin",
           "offset": 0
         }
       ]

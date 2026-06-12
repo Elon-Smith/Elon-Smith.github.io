@@ -1,10 +1,12 @@
 # ESP8266 firmware assets
 
-Published firmware for the Weather Ink Screen V14 ESP8266 / A01 build:
+Published firmware for the Weather Ink Screen ESP8266 / A01 build:
 
 ```text
-V14_Esp8266.bin
+beining-esp8266-firmware.bin
 ```
+
+Current public version: `v1.0.1`.
 
 Use this as a single full 4MB factory image at flash offset `0x000000`.
 The image already contains the app firmware, LittleFS data, and ESP8266 init data, so users do not need to flash separate parts.
@@ -19,4 +21,4 @@ Flash frequency: 40MHz
 Offset: 0x000000
 ```
 
-For ESP Web Tools, `manifest.json` points to `V14_Esp8266.bin` with `offset: 0`.
+For ESP Web Tools, `manifest.json` points to `beining-esp8266-firmware.bin` with `offset: 0`.
