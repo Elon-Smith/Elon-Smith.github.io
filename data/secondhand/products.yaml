@@ -1,0 +1,591 @@
+# 二手商品集中数据文档。
+# 是否已售出：把对应商品的 sold 改为 true 后，Hugo 构建会自动从二手页面隐藏该商品。
+# 售价：把 price: "TODO_BY_SELLER" 改为实际售价；未填写价格时保持草稿/待定展示。
+excluded_images:
+  - file: "IMG_6183.JPEG"
+    reason: "严重失焦，未作为正式商品图公开；建议重拍。"
+products:
+  -
+    id: "SH-001"
+    slug: "mijia-lint-remover"
+    title: "米家毛球修剪器 / 衣物除毛球器"
+    category: "家居小电器 / 衣物护理"
+    brand: "米家 / Mijia / Xiaomi"
+    model: "MQXJQ01KL"
+    condition: "二手，有明显使用痕迹，建议清洁后使用"
+    confidence: "高"
+    price: "3￡"
+    status: "draft"
+    sold: false
+    description: "适合衣物、毛衣、围巾等织物表面除毛球使用。体积小，便携。"
+    basics: "白色米家毛球修剪器，带圆形刀网和可视储屑仓。标签可见型号 `MQXJQ01KL`，输入 `5V/1A`，额定功率约 `5W`。"
+    images:
+      - "/assets/secondhand/mijia-lint-remover-img_6144.jpg"
+      - "/assets/secondhand/mijia-lint-remover-img_6145.jpg"
+      - "/assets/secondhand/mijia-lint-remover-img_6146.jpg"
+    source_images:
+      - "IMG_6144.JPEG"
+      - "IMG_6145.JPEG"
+      - "IMG_6146.JPEG"
+    notes:
+      - "机身和刀网有使用痕迹，储屑仓/刀网区域有灰。"
+      - "可正常充电、开机、且刀头无损坏。"
+  -
+    id: "SH-002"
+    slug: "bricks-mini-blocks-2-pack"
+    title: "BRICKS 卡通迷你积木套装 2盒"
+    category: "玩具 / 积木"
+    brand: "BRICKS"
+    model: "W2601-13 / W2605-06"
+    condition: "外盒未拆封"
+    confidence: "高"
+    price: "3￡"
+    status: "draft"
+    sold: false
+    description: "迷你颗粒积木套装，适合桌面摆件或拼装收藏。"
+    basics: "两盒小型拼装积木，红盒为白色卡通小狗造型"
+    images:
+      - "/assets/secondhand/bricks-mini-blocks-2-pack-img_6147.jpg"
+      - "/assets/secondhand/bricks-mini-blocks-2-pack-img_6148.jpg"
+    source_images:
+      - "IMG_6147.JPEG"
+      - "IMG_6148.JPEG"
+    notes:
+      - "盒体有轻微压痕。"
+  -
+    id: "SH-003"
+    slug: "zh28-digital-desktop-fan"
+    title: "ZH28 数显桌面小风扇"
+    category: "小家电 / 桌面风扇"
+    brand: "未知"
+    model: "ZH28"
+    condition: "二手，有灰尘和使用痕迹"
+    confidence: "高"
+    price: "8￡"
+    status: "draft"
+    sold: false
+    description: "可充电桌面小风扇，适合办公桌、床头或宿舍使用。USB-C 接口充电。"
+    basics: "透明外框桌面风扇，正面有电量/档位显示，底座有按键，背面标签显示 `Product model: ZH28`、`Digital desktop fan`、`5V=2A`、`4.5W`，尺寸约 `139.6 × 79 × 167.1mm`。"
+    images:
+      - "/assets/secondhand/zh28-digital-desktop-fan-img_6149.jpg"
+      - "/assets/secondhand/zh28-digital-desktop-fan-img_6151.jpg"
+    source_images:
+      - "IMG_6149.JPEG"
+      - "IMG_6151.JPEG"
+    notes:
+      - "扇叶和防护框轻微灰尘。"
+      - "充电、电池续航、各档风速和显示均正常。"
+  -
+    id: "SH-004"
+    slug: "cuktech-power-bank-built-in-cable"
+    title: "CUKTECH 酷态科自带线充电宝10000mAh"
+    category: "数码配件 / 充电宝"
+    brand: "CUKTECH / 酷态科"
+    model: "P133L"
+    condition: "外壳有明显划痕"
+    confidence: "中高"
+    price: "8￡"
+    status: "draft"
+    sold: false
+    description: "便携自带线充电宝，适合手机日常补电。外置短线减少额外带线需求。"
+    basics: "黑色 CUKTECH 充电宝，带一体式短线/挂绳式线缆。标签较暗，可见快充规格和锂电池标识；功率与容量信息以机身铭牌为准。"
+    images:
+      - "/assets/secondhand/cuktech-power-bank-built-in-cable-img_6152.jpg"
+      - "/assets/secondhand/cuktech-power-bank-built-in-cable-img_6155.jpg"
+    source_images:
+      - "IMG_6152.JPEG"
+      - "IMG_6155.JPEG"
+    notes:
+      - "外壳划痕明显，铭牌不易读；接口、显示/电量状态和铭牌信息以实物为准。"
+      - "输入输出、线缆接口类型、容量衰减和快充支持情况以实物测试为准。"
+  -
+    id: "SH-005"
+    slug: "black-folding-mini-stand"
+    title: "黑色折叠迷你支架 / 桌面三脚架"
+    category: "手机/摄影配件"
+    brand: "未知"
+    model: "未知"
+    condition: "二手，当前展示折叠状态照片"
+    confidence: "中"
+    price: "3￡"
+    status: "draft"
+    sold: false
+    description: "轻便折叠式支架，适合桌面拍摄、直播或手机/小设备支撑。"
+    basics: "黑色长条折叠支架，外观类似桌面三脚架、手机支架或小型相机支架。"
+    images:
+      - "/assets/secondhand/black-folding-mini-stand-img_6157.jpg"
+    source_images:
+      - "IMG_6157.JPEG"
+    notes:
+      - "当前仅展示折叠状态，展开结构和接口规格以实物为准。"
+      - "展开结构、顶部连接头、手机夹适配情况、最大高度和稳定性以实物为准。"
+  -
+    id: "SH-006"
+    slug: "travel-plug-adapter-set-5pcs"
+    title: "转换插头 / 旅行插头套装 5件"
+    category: "电源配件 / 旅行转换头"
+    brand: "MerKan 等"
+    model: "多型号混合"
+    condition: "二手，有划痕"
+    confidence: "高"
+    price: "1￡/个"
+    status: "draft"
+    sold: false
+    description: "旅行或跨地区电器使用的插头转换套装，适合已有多国插头设备的人。"
+    basics: "一组转换插头，共 5 件；左侧黑色为 MerKan 万能旅行转换头，另有多个白色英规转换插头/插座适配器，其中一个可见 `13A 250V`。"
+    images:
+      - "/assets/secondhand/travel-plug-adapter-set-5pcs-img_6158.jpg"
+    source_images:
+      - "IMG_6158.JPEG"
+    notes:
+      - "部分外壳有划痕。"
+      - "每个转换头的接触状态以实物为准；只转换插头形状，不改变电压。"
+  -
+    id: "SH-007"
+    slug: "grey-hanger-organizer-hooks"
+    title: "灰色多功能衣架挂钩 / 收纳挂钩"
+    category: "家居收纳"
+    brand: "未知"
+    model: "未知"
+    condition: "二手/部分仍在塑料袋内，数量以实物为准"
+    confidence: "中"
+    price: "2￡/个"
+    status: "draft"
+    sold: false
+    description: "用于衣柜、衣架或挂放小物的收纳配件，可节省空间。"
+    basics: "灰色塑料多功能挂钩/衣架连接器，图片中一组打开，一组仍在塑料袋内。"
+    images:
+      - "/assets/secondhand/grey-hanger-organizer-hooks-img_6159.jpg"
+    source_images:
+      - "IMG_6159.JPEG"
+    notes:
+      - "具体用途和数量以实物为准。"
+      - "数量、承重、断裂或缺件情况以实物为准。"
+  -
+    id: "SH-008"
+    slug: "newmine-10000mah-power-bank"
+    title: "Newmine 10000mAh 多线充电宝"
+    category: "数码配件 / 充电宝"
+    brand: "Newmine"
+    model: "M138"
+    condition: "二手，有污渍和划痕，屏幕可亮"
+    confidence: "高"
+    price: "9￡"
+    status: "draft"
+    sold: false
+    description: "适合多设备临时补电，自带多种接口线，不需要额外携带数据线。"
+    basics: "白色 Newmine 移动电源，型号 `M138`，标注电池容量 `10000mAh / 37Wh / 3.7V`。背面自带多种线缆：USB、Micro-USB、Type-C、Lightning；正面有数显电量屏。"
+    images:
+      - "/assets/secondhand/newmine-10000mah-power-bank-img_6160.jpg"
+      - "/assets/secondhand/newmine-10000mah-power-bank-img_6161.jpg"
+    source_images:
+      - "IMG_6160.JPEG"
+      - "IMG_6161.JPEG"
+    notes:
+      - "机身有污渍和划痕；屏幕在照片中显示可点亮。"
+      - "每条线输出状态和电池容量衰减情况以实物测试为准。"
+  -
+    id: "SH-009"
+    slug: "colorful-binder-clips-25mm"
+    title: "彩色长尾票夹 / 燕尾夹 25mm"
+    category: "办公用品"
+    brand: "未知"
+    model: "No.8554ES"
+    condition: "已开封，数量以实物为准"
+    confidence: "高"
+    price: "3￡/盒"
+    status: "draft"
+    sold: false
+    description: "适合文件整理、票据夹持、学习办公使用。"
+    basics: "彩色长尾票夹，包装标注 `No.8554ES`、`4#`、`25mm`、`48只`。"
+    images:
+      - "/assets/secondhand/colorful-binder-clips-25mm-img_6162.jpg"
+    source_images:
+      - "IMG_6162.JPEG"
+    notes:
+      - "盒子已打开，实际剩余数量以实物为准。"
+      - "数量、夹力、生锈或变形情况以实物为准。"
+  -
+    id: "SH-010"
+    slug: "thinkpad-wireless-mouse-usb-receiver"
+    title: "ThinkPad 无线鼠标含 USB 接收器"
+    category: "电脑配件 / 鼠标"
+    brand: "ThinkPad / Lenovo"
+    model: "未知"
+    condition: "二手，有表面划痕"
+    confidence: "高"
+    price: "12￡"
+    status: "draft"
+    sold: false
+    description: "适合笔记本或台式机日常办公使用，带接收器，即插即用。"
+    basics: "黑色 ThinkPad 无线鼠标，红色滚轮，带 USB 接收器。"
+    images:
+      - "/assets/secondhand/thinkpad-wireless-mouse-usb-receiver-img_6163.jpg"
+    source_images:
+      - "IMG_6163.JPEG"
+    notes:
+      - "鼠标外壳有划痕；电池仓和底部未拍到。"
+      - "左右键、滚轮、DPI/前后键、接收器配对和电池仓状态以实物测试为准。"
+  -
+    id: "SH-011"
+    slug: "playing-card-decks-2-pack"
+    title: "扑克牌 2副"
+    category: "文娱 / 桌游"
+    brand: "姚记 / giffgaff"
+    model: "姚记 No.990 等"
+    condition: "外包装有塑封痕迹，塑封状态以实物为准"
+    confidence: "高"
+    price: "2￡/套"
+    status: "draft"
+    sold: false
+    description: "适合家庭娱乐、聚会、旅行携带。"
+    basics: "两副扑克牌：左侧为姚记 `No.990`，右侧为 giffgaff 品牌包装扑克牌。"
+    images:
+      - "/assets/secondhand/playing-card-decks-2-pack-img_6164.jpg"
+    source_images:
+      - "IMG_6164.JPEG"
+    notes:
+      - "外包装看起来有塑封，但包装状态未拆以实物为准。"
+      - "每副完整性和缺牌情况以实物为准。"
+  -
+    id: "SH-012"
+    slug: "black-metal-desk-storage-basket"
+    title: "黑色金属桌面收纳篮"
+    category: "家居/办公收纳"
+    brand: "未知"
+    model: "未知"
+    condition: "二手，有灰尘"
+    confidence: "高"
+    price: "3￡"
+    status: "draft"
+    sold: false
+    description: "可用于桌面收纳、文件、遥控器、文具或杂物整理。"
+    basics: "黑色金属网格收纳篮，底部带托盘/分隔结构。"
+    images:
+      - "/assets/secondhand/black-metal-desk-storage-basket-img_6165.jpg"
+      - "/assets/secondhand/black-metal-desk-storage-basket-img_6166.jpg"
+    source_images:
+      - "IMG_6165.JPEG"
+      - "IMG_6166.JPEG"
+    notes:
+      - "底部可见灰尘，外观以图片和实物为准。"
+      - "金属框变形情况和底托牢固程度以实物为准。"
+  -
+    id: "SH-013"
+    slug: "romoss-uk-plug-3-port-charger"
+    title: "ROMOSS 罗马仕英规三口充电器"
+    category: "数码配件 / 充电器"
+    brand: "ROMOSS / 罗马仕"
+    model: "以实物为准"
+    condition: "二手，有外壳磨痕"
+    confidence: "中高"
+    price: "10￡"
+    status: "draft"
+    sold: false
+    description: "适合手机、平板、耳机等 USB 设备充电，一只充电器可同时连接多台设备。"
+    basics: "黑色 ROMOSS 充电器，英规三脚插头，正面有 2 个 USB-C 和 1 个 USB-A 接口。"
+    images:
+      - "/assets/secondhand/romoss-uk-plug-3-port-charger-img_6167.jpg"
+    source_images:
+      - "IMG_6167.JPEG"
+    notes:
+      - "照片中可见 2 个 USB-C、1 个 USB-A 接口和英规插头，功率/型号以机身铭牌为准。"
+      - "最大功率、PD/QC 支持情况和各接口输出以机身铭牌与实物测试为准。"
+  -
+    id: "SH-014"
+    slug: "haidilao-hotpot-base-90g"
+    title: "海底捞牛油火锅底料 90g"
+    category: "食品 / 调味料"
+    brand: "海底捞"
+    model: "牛油火锅底料"
+    condition: "包装看起来未开封，日期以铭牌或包装标识为准"
+    confidence: "高"
+    price: "2￡/包"
+    status: "draft"
+    sold: false
+    description: "小包装牛油火锅底料，适合一人食或小锅使用。"
+    basics: "海底捞牛油火锅底料，净含量 `90g`，包装标注可用于火锅、炒菜、麻辣烫、煮面。"
+    images:
+      - "/assets/secondhand/haidilao-hotpot-base-90g-img_6169.jpg"
+    source_images:
+      - "IMG_6169.JPEG"
+    notes:
+      - "食品包装完整性、生产日期、保质期和储存条件以包装标识为准。"
+      - "食品包装完整性、生产日期、保质期和储存条件以包装标识为准。"
+  -
+    id: "SH-015"
+    slug: "socket-ratchet-tool-kit"
+    title: "套筒棘轮扳手工具套装"
+    category: "工具"
+    brand: "未知"
+    model: "未知"
+    condition: "二手，配件齐全情况以实物为准"
+    confidence: "高"
+    price: "7￡"
+    status: "draft"
+    sold: false
+    description: "适合家用维修、家具组装、自行车或小型机械维护。"
+    basics: "套筒与批头工具盒，包含棘轮扳手、套筒、批头、延长杆等。"
+    images:
+      - "/assets/secondhand/socket-ratchet-tool-kit-img_6170.jpg"
+    source_images:
+      - "IMG_6170.JPEG"
+    notes:
+      - "工具散落，套装件数以实物为准。"
+      - "套装件数、棘轮顺滑程度、批头/套筒缺失或锈蚀情况以实物为准。"
+  -
+    id: "SH-016"
+    slug: "tesco-a4-printer-paper-70gsm"
+    title: "Tesco A4 打印纸 70gsm"
+    category: "办公用品"
+    brand: "Tesco Home Office"
+    model: "A4 Printer Paper"
+    condition: "包装破损，实际张数以实物为准"
+    confidence: "高"
+    price: "3￡/包"
+    status: "draft"
+    sold: false
+    description: "A4 打印纸，可用于日常打印、草稿、学习和办公。"
+    basics: "Tesco Home Office A4 打印纸，包装标注 `500 sheets`、`70 gsm`，适合黑白打印、喷墨和激光打印机。"
+    images:
+      - "/assets/secondhand/tesco-a4-printer-paper-70gsm-img_6171.jpg"
+    source_images:
+      - "IMG_6171.JPEG"
+    notes:
+      - "包装明显破损，实际剩余张数可能少于 500。"
+      - "纸张受潮、卷边、发黄或缺张情况以实物为准。"
+  -
+    id: "SH-017"
+    slug: "remington-proluxe-ac9140-hair-dryer"
+    title: "Remington PROluxe 吹风机 AC9140"
+    category: "小家电 / 美发电器"
+    brand: "Remington"
+    model: "AC9140"
+    condition: "二手，外壳有污渍和磨痕"
+    confidence: "高"
+    price: "10￡"
+    status: "draft"
+    sold: false
+    description: "大功率吹风机，适合日常干发和造型使用。"
+    basics: "Remington PROluxe 吹风机，铭牌显示型号 `AC9140`，`220–240V`、`50/60Hz`、`1850–2400W`，英规插头。"
+    images:
+      - "/assets/secondhand/remington-proluxe-ac9140-hair-dryer-img_6172.jpg"
+      - "/assets/secondhand/remington-proluxe-ac9140-hair-dryer-img_6173.jpg"
+    source_images:
+      - "IMG_6172.JPEG"
+      - "IMG_6173.JPEG"
+    notes:
+      - "外壳有污渍/磨痕，线缆缠绕；风嘴配件未见。"
+      - "测试冷热风、风速档位、过热保护和插头线缆安全。"
+  -
+    id: "SH-018"
+    slug: "screwdriver-adjustable-wrench-tool-set"
+    title: "螺丝刀与活动扳手工具组合"
+    category: "工具"
+    brand: "未知"
+    model: "未知"
+    condition: "二手，零散组合"
+    confidence: "高"
+    price: "6￡"
+    status: "draft"
+    sold: false
+    description: "适合日常家具装配、简单维修和应急使用。"
+    basics: "工具组合，包含多头螺丝刀手柄、延长杆/批头，以及一把活动扳手。扳手标注范围约 `0–150mm`。"
+    images:
+      - "/assets/secondhand/screwdriver-adjustable-wrench-tool-set-img_6174.jpg"
+    source_images:
+      - "IMG_6174.JPEG"
+    notes:
+      - "不是完整原盒套装，具体批头数量以实物为准。"
+      - "批头齐全情况、手柄卡扣牢固程度和扳手调节顺畅度以实物为准。"
+  -
+    id: "SH-019"
+    slug: "eecbest-power-strip-3-outlet-3-usb"
+    title: "eecbest 多功能插线板，3插位+3 USB"
+    category: "电源配件 / 插线板"
+    brand: "eecbest"
+    model: "以实物为准"
+    condition: "二手，有外观污渍"
+    confidence: "高"
+    price: "4￡"
+    status: "draft"
+    sold: false
+    description: "适合桌面设备、手机、平板等同时供电。"
+    basics: "eecbest 白灰色插线板，带 3 个多功能 AC 插孔、3 个 USB-A 口和总开关。插头为中国/澳规三扁脚样式。"
+    images:
+      - "/assets/secondhand/eecbest-power-strip-3-outlet-3-usb-img_6175.jpg"
+    source_images:
+      - "IMG_6175.JPEG"
+    notes:
+      - "外壳和线缆有使用痕迹。"
+      - "最大功率、保险/保护功能、USB 输出和插孔接触稳定性以机身铭牌与实物测试为准。"
+  -
+    id: "SH-020"
+    slug: "warmlite-portable-fan-heater"
+    title: "Warmlite 便携暖风机"
+    category: "小家电 / 取暖器"
+    brand: "Warmlite"
+    model: "以实物为准"
+    condition: "二手，有轻微污渍"
+    confidence: "高"
+    price: "15￡"
+    status: "draft"
+    sold: false
+    description: "小型便携暖风机，适合桌边、房间局部取暖。"
+    basics: "白色 Warmlite 便携暖风机，正面有出风口，顶部有模式/温控旋钮，机身印有 `DO NOT COVER`。"
+    images:
+      - "/assets/secondhand/warmlite-portable-fan-heater-img_6176.jpg"
+    source_images:
+      - "IMG_6176.JPEG"
+    notes:
+      - "外壳有使用痕迹，铭牌未拍到。"
+      - "加热、送风、旋钮、倾倒保护/过热保护状态以实物测试为准，铭牌和插头以实物为准。"
+  -
+    id: "SH-021"
+    slug: "white-power-strip-3-outlet-usb"
+    title: "白色多功能插线板，3插位+USB"
+    category: "电源配件 / 插线板"
+    brand: "品牌以铭牌或包装标识为准"
+    model: "以实物为准"
+    condition: "二手，有污渍"
+    confidence: "中高"
+    price: "4￡"
+    status: "draft"
+    sold: false
+    description: "适合桌面或床头多设备供电和 USB 充电。"
+    basics: "白色插线板，带 3 个多功能插位和顶部 USB-A 口，插头为中国/澳规三扁脚样式。"
+    images:
+      - "/assets/secondhand/white-power-strip-3-outlet-usb-img_6177.jpg"
+    source_images:
+      - "IMG_6177.JPEG"
+    notes:
+      - "线缆缠绕，外壳有污渍；品牌字样不够清晰。"
+      - "品牌、最大功率、USB 输出和插孔接触情况以机身铭牌与实物测试为准。"
+  -
+    id: "SH-022"
+    slug: "blue-white-uk-plug-power-strip"
+    title: "蓝白英规插线板"
+    category: "电源配件 / 插线板"
+    brand: "以实物为准"
+    model: "以实物为准"
+    condition: "二手"
+    confidence: "中高"
+    price: "4￡"
+    status: "draft"
+    sold: false
+    description: "英规插头插线板，适合英国插座环境下给多设备供电。"
+    basics: "白色线缆、蓝白面板插线板，英规三脚插头，面板上有 3 个多功能插位和开关。"
+    images:
+      - "/assets/secondhand/blue-white-uk-plug-power-strip-img_6178.jpg"
+    source_images:
+      - "IMG_6178.JPEG"
+    notes:
+      - "线缆缠绕，品牌和功率信息以机身铭牌为准。"
+      - "最大功率和安全认证以机身铭牌为准。"
+  -
+    id: "SH-023"
+    slug: "small-white-extension-cord-dual-outlet"
+    title: "白色小型延长线 / 双孔插座"
+    category: "电源配件 / 延长线"
+    brand: "未知"
+    model: "未知"
+    condition: "二手，图片较模糊"
+    confidence: "中"
+    price: "3￡"
+    status: "draft"
+    sold: false
+    description: "小型延长线，适合低功率设备使用。"
+    basics: "白色小型延长线/插座，面板上可见两个扁孔插位，插头类似中国/澳规两扁脚。"
+    images:
+      - "/assets/secondhand/small-white-extension-cord-dual-outlet-img_6179.jpg"
+    source_images:
+      - "IMG_6179.JPEG"
+    notes:
+      - "线缆有变色/污渍，外观以图片和实物为准。"
+      - "额定功率、电线状态、插孔接触和当地插座适配情况以实物为准。"
+  -
+    id: "SH-024"
+    slug: "deli-power-strip-2500w"
+    title: "得力 Deli 插线板，最大功率 2500W"
+    category: "电源配件 / 插线板"
+    brand: "得力 / Deli"
+    model: "以实物为准"
+    condition: "二手，有污渍"
+    confidence: "高"
+    price: "4￡"
+    status: "draft"
+    sold: false
+    description: "家用/办公插线板，适合多设备集中供电。"
+    basics: "得力白色插线板，机身可见 `最大功率 2500W`，带开关和多个多功能插位。插头为中国/澳规三扁脚样式。"
+    images:
+      - "/assets/secondhand/deli-power-strip-2500w-img_6180.jpg"
+    source_images:
+      - "IMG_6180.JPEG"
+    notes:
+      - "线缆缠绕，外壳有使用痕迹。"
+      - "开关、插孔接触和线缆绝缘状态以实物测试为准。"
+  -
+    id: "SH-025"
+    slug: "mijia-1-5l-electric-kettle"
+    title: "米家 1.5L 电水壶"
+    category: "厨房小电器 / 电水壶"
+    brand: "米家 / Mijia / Xiaomi"
+    model: "以实物为准"
+    condition: "二手，有水垢和外观污渍"
+    confidence: "高"
+    price: "15￡"
+    status: "draft"
+    sold: false
+    description: "1.5L 电热水壶，适合日常烧水、办公室或宿舍使用。"
+    basics: "米家白色电水壶，内胆为不锈钢，内壁刻度显示 `1.5L` 和 `0.5L`。插头为中国/澳规三扁脚样式。"
+    images:
+      - "/assets/secondhand/mijia-1-5l-electric-kettle-img_6181.jpg"
+      - "/assets/secondhand/mijia-1-5l-electric-kettle-img_6182.jpg"
+    source_images:
+      - "IMG_6181.JPEG"
+      - "IMG_6182.JPEG"
+    notes:
+      - "外壳有污渍，内胆有水垢/水痕，建议除垢清洁后使用。"
+      - "自动断电、烧水速度、底座/电源线和壶盖开合状态以实物测试为准。"
+  -
+    id: "SH-026"
+    slug: "mijia-mini-rice-cooker"
+    title: "米家/小米迷你电饭煲"
+    category: "厨房小电器 / 电饭煲"
+    brand: "米家 / Mijia / Xiaomi，以铭牌或包装标识为准铭牌"
+    model: "以实物为准"
+    condition: "二手，内盖和机身建议清洁后使用"
+    confidence: "中高"
+    price: "20￡"
+    status: "draft"
+    sold: false
+    description: "小容量迷你电饭煲，适合 1–2 人使用，可煮饭/粥等。"
+    basics: "小型白色电饭煲，中文控制面板，按键包含“预约/时间”“开始”“选择/取消”。内胆水位刻度适合小容量煮饭/煮粥。"
+    images:
+      - "/assets/secondhand/mijia-mini-rice-cooker-img_6184.jpg"
+    source_images:
+      - "IMG_6184.JPEG"
+    notes:
+      - "机身、内盖和周围台面可见污渍；铭牌未拍到。"
+      - "内胆、底部铭牌、电源线、煮饭、保温和按键状态以实物为准。"
+  -
+    id: "SH-027"
+    slug: "aqua-optima-filter-jug-evolve-plus-filters"
+    title: "Aqua Optima 滤水壶与 evolve+ 滤芯"
+    category: "厨房用品 / 滤水壶"
+    brand: "Aqua Optima"
+    model: "evolve+ multi-fit filter"
+    condition: "滤水壶二手，滤芯包装状态与数量以实物为准"
+    confidence: "高"
+    price: "19￡"
+    status: "draft"
+    sold: false
+    description: "滤水壶与替换滤芯组合，适合日常饮水过滤使用。"
+    basics: "Aqua Optima 滤水壶，旁边有 evolve+ multi-fit filter 滤芯包装。盒装标注每盒 `3 x 30 day water filter`，另有独立包装滤芯若干。"
+    images:
+      - "/assets/secondhand/aqua-optima-filter-jug-evolve-plus-filters-img_6185.jpg"
+    source_images:
+      - "IMG_6185.JPEG"
+    notes:
+      - "滤水壶为透明塑料，建议使用前清洗；滤芯包装状态、数量和有效期以实物为准。"
+      - "滤芯包装、有效期以及滤水壶裂纹/异味情况以实物为准。"

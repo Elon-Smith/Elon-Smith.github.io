@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description }}" />
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
+  </head>
+  <body>
+    {{ $allProducts := hugo.Data.secondhand.products.products }}
+    {{ $visibleCount := 0 }}
+    {{ $imageCount := 0 }}
+    {{ $pricedCount := 0 }}
+    {{ range $allProducts }}
+      {{ if not .sold }}
+        {{ $visibleCount = add $visibleCount 1 }}
+        {{ $images := default (slice) .images }}
+        {{ $price := default "TODO_BY_SELLER" .price }}
+        {{ $imageCount = add $imageCount (len $images) }}
+        {{ if and (ne $price "") (ne $price "TODO_BY_SELLER") }}
+          {{ $pricedCount = add $pricedCount 1 }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
+          <span class="brand-mark">IC</span>
+          <span>智能制造工作室 / Elon-Smith</span>
+        </a>
+        <nav class="topnav" aria-label="主导航">
+          <a href="{{ "firmware/" | relURL }}">固件刷写</a>
+          <a href="{{ "secondhand/" | relURL }}" aria-current="page">二手闲置</a>
+          <a href="{{ "/#skills" | relURL }}">技能</a>
+          <a href="{{ "/#notes" | relURL }}">记录</a>
+          <a href="{{ "/#contact" | relURL }}">联系</a>
+        </nav>
+        <div class="top-stats" aria-label="二手商品状态">
+          <span><b>{{ $visibleCount }}</b> 件在列</span>
+          <span><b>{{ $imageCount }}</b> 张图片</span>
+          <span><b>{{ $pricedCount }}</b> 个售价</span>
+        </div>
+      </header>
+
+      <main class="secondhand-page">
+        <section class="secondhand-list-head" aria-label="二手闲置商品">
+          <p class="eyebrow live">Secondhand</p>
+          <h1>{{ .Title }}</h1>
+          <p>价格由卖家填写，以实物为准，售出非质量问题不退还，已售商品不会进入当前列表，人民币*8.5 汇率。购买 10 镑及以上 Morriss House 附近可送；10 镑以下仅 Morriss 楼送货。</p>
+        </section>
+
+        {{ if eq $visibleCount 0 }}
+          <section class="secondhand-empty" aria-label="暂无商品">
+            <p>暂无可展示商品。</p>
+          </section>
+        {{ else }}
+          <section class="secondhand-grid" aria-label="二手商品列表">
+            {{ range $allProducts }}
+              {{ if not .sold }}
+                {{ $product := . }}
+                {{ $images := default (slice) .images }}
+                {{ $price := default "TODO_BY_SELLER" .price }}
+                {{ $hasPrice := and (ne $price "") (ne $price "TODO_BY_SELLER") }}
+                {{ $imageTotal := len $images }}
+                <article class="secondhand-card" id="{{ .slug }}">
+                  <div class="secondhand-gallery-shell" data-gallery>
+                    <div class="secondhand-card-gallery" aria-label="{{ .title }} 图片" data-gallery-track>
+                      {{ range $index, $image := $images }}
+                        <a class="secondhand-gallery-item" href="{{ $image | relURL }}">
+                          <img src="{{ $image | relURL }}" alt="{{ $product.title }} 商品图 {{ add $index 1 }}" loading="lazy" />
+                        </a>
+                      {{ end }}
+                    </div>
+                    {{ if gt $imageTotal 1 }}
+                      <span class="secondhand-gallery-count" data-gallery-count>1 / {{ $imageTotal }}</span>
+                      <div class="secondhand-gallery-dots" aria-hidden="true">
+                        {{ range seq $imageTotal }}
+                          <span class="secondhand-gallery-dot{{ if eq . 1 }} is-active{{ end }}" data-gallery-dot></span>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  </div>
+
+                  <div class="secondhand-card-body">
+                    <div class="secondhand-card-meta">
+                      <span>{{ .id }}</span>
+                      <span>{{ .category }}</span>
+                    </div>
+                    <h2>{{ .title }}</h2>
+                    <p>{{ .description }}</p>
+
+                    <dl class="secondhand-facts">
+                      <div>
+                        <dt>价格</dt>
+                        <dd>{{ if $hasPrice }}{{ $price }}{{ else }}待定{{ end }}</dd>
+                      </div>
+                      <div>
+                        <dt>成色</dt>
+                        <dd>{{ .condition }}</dd>
+                      </div>
+                    </dl>
+
+                    <details class="secondhand-details">
+                      <summary>商品详情</summary>
+                      <div class="secondhand-detail-block">
+                        <h3>基础识别</h3>
+                        <p>{{ .basics | markdownify }}</p>
+                      </div>
+                      {{ with .notes }}
+                        <div class="secondhand-detail-block">
+                          <h3>商品说明</h3>
+                          <ul>
+                            {{ range . }}
+                              <li>{{ . | markdownify }}</li>
+                            {{ end }}
+                          </ul>
+                        </div>
+                      {{ end }}
+                      <div class="image-source-list">
+                        {{ range .source_images }}
+                          <span>{{ . }}</span>
+                        {{ end }}
+                      </div>
+                    </details>
+                  </div>
+                </article>
+              {{ end }}
+            {{ end }}
+          </section>
+        {{ end }}
+      </main>
+    </div>
+    <script>
+      (() => {
+        const galleries = document.querySelectorAll("[data-gallery]");
+        galleries.forEach((gallery) => {
+          const track = gallery.querySelector("[data-gallery-track]");
+          const count = gallery.querySelector("[data-gallery-count]");
+          const dots = Array.from(gallery.querySelectorAll("[data-gallery-dot]"));
+          const total = dots.length;
+
+          if (!track || !count || total < 2) {
+            return;
+          }
+
+          let ticking = false;
+          const update = () => {
+            const slideWidth = track.clientWidth || 1;
+            const index = Math.min(total - 1, Math.max(0, Math.round(track.scrollLeft / slideWidth)));
+            count.textContent = `${index + 1} / ${total}`;
+            dots.forEach((dot, dotIndex) => {
+              dot.classList.toggle("is-active", dotIndex === index);
+            });
+            ticking = false;
+          };
+
+          track.addEventListener(
+            "scroll",
+            () => {
+              if (!ticking) {
+                window.requestAnimationFrame(update);
+                ticking = true;
+              }
+            },
+            { passive: true },
+          );
+          window.addEventListener("resize", update);
+          update();
+        });
+      })();
+    </script>
+  </body>
+</html>
