@@ -1,0 +1,16 @@
+{
+  "name": "BEINING ESP32 Firmware",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "beining-esp32-firmware.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

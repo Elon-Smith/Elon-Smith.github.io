@@ -99,21 +99,30 @@ img {
 }
 
 .topnav {
+  justify-content: space-between;
   gap: 8px;
-  padding: 6px;
+  min-width: 430px;
+  padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 999px;
   background: rgba(6, 13, 18, 0.62);
 }
 
 .topnav a {
-  padding: 7px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  min-height: 38px;
+  padding: 0 18px;
   border-radius: 999px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 680;
 }
 
-.topnav a:hover {
+.topnav a:hover,
+.topnav a[aria-current="page"] {
   color: var(--text);
   background: rgba(49, 184, 255, 0.11);
 }
@@ -136,6 +145,24 @@ img {
   color: var(--text);
   font-size: 17px;
   font-weight: 750;
+}
+
+.top-stats.site-age {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(72px, 1fr));
+  min-width: 430px;
+  gap: 0;
+}
+
+.top-stats.site-age span {
+  min-width: 0;
+  padding: 0 18px;
+  text-align: center;
+}
+
+.top-stats.site-age b {
+  font-variant-numeric: tabular-nums;
+  font-size: 20px;
 }
 
 .hero-grid {
@@ -754,15 +781,249 @@ canvas {
   background: rgba(49, 184, 255, 0.08);
 }
 
+.firmware-page {
+  display: grid;
+  gap: 28px;
+}
+
+.firmware-hero,
+.firmware-console,
+.firmware-steps {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(11, 27, 36, 0.86), rgba(5, 13, 18, 0.82));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.firmware-hero::before,
+.firmware-console::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(49, 184, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(49, 184, 255, 0.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  opacity: 0.65;
+}
+
+.firmware-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 28px;
+  align-items: end;
+  min-height: 310px;
+  padding: 42px 38px;
+}
+
+.firmware-hero h1 {
+  max-width: 760px;
+}
+
+.firmware-status {
+  position: relative;
+  display: grid;
+  gap: 12px;
+}
+
+.firmware-status span {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(139, 211, 242, 0.18);
+  border-radius: 8px;
+  color: var(--soft);
+  background: rgba(7, 18, 25, 0.78);
+  font-size: 14px;
+}
+
+.firmware-status span::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 16px rgba(53, 237, 131, 0.72);
+}
+
+.firmware-console {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.firmware-panel-main,
+.firmware-detail {
+  position: relative;
+  padding: 30px 32px;
+}
+
+.firmware-panel-main {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.firmware-field {
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.firmware-field span {
+  color: var(--soft);
+  font-weight: 720;
+}
+
+.firmware-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(139, 211, 242, 0.24);
+  border-radius: 8px;
+  color: var(--text);
+  background: #07131a;
+  font: inherit;
+}
+
+esp-web-install-button {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.flash-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid rgba(53, 237, 131, 0.48);
+  border-radius: 8px;
+  color: #031009;
+  background: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 820;
+  box-shadow: 0 14px 36px rgba(53, 237, 131, 0.16);
+}
+
+.flash-button:hover {
+  filter: brightness(1.05);
+}
+
+.firmware-note {
+  display: grid;
+  gap: 6px;
+  max-width: 520px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(240, 196, 90, 0.22);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(240, 196, 90, 0.07);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.firmware-note b {
+  color: var(--warning);
+}
+
+.firmware-detail h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+.firmware-detail dl {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.firmware-detail div {
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.firmware-detail dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.firmware-detail dd {
+  margin: 6px 0 0;
+  color: var(--soft);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.firmware-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.firmware-steps div {
+  min-height: 142px;
+  padding: 24px 26px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.firmware-steps div:last-child {
+  border-right: 0;
+}
+
+.firmware-steps span {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(49, 184, 255, 0.5);
+  border-radius: 7px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 820;
+}
+
+.firmware-steps b {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.firmware-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 @media (max-width: 1180px) {
   .topbar,
   .hero-grid,
-  .lower-grid {
+  .lower-grid,
+  .firmware-hero,
+  .firmware-console {
     grid-template-columns: 1fr;
+  }
+
+  .firmware-panel-main {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .top-stats {
     justify-content: flex-start;
+  }
+
+  .top-stats.site-age {
+    width: 100%;
+    min-width: 0;
   }
 
   .project-console,
@@ -797,6 +1058,31 @@ canvas {
     flex-wrap: wrap;
   }
 
+  .top-stats.site-age {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .top-stats.site-age span {
+    padding: 0 10px;
+  }
+
+  .top-stats.site-age b {
+    font-size: 18px;
+  }
+
+  .topnav {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-around;
+  }
+
+  .topnav a {
+    min-width: 74px;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 15px;
+  }
+
   h1 {
     font-size: 34px;
   }
@@ -806,7 +1092,8 @@ canvas {
   .chart-log-grid,
   .project-row,
   .mini-metrics,
-  .tech-strip {
+  .tech-strip,
+  .firmware-steps {
     grid-template-columns: 1fr;
   }
 
@@ -814,14 +1101,22 @@ canvas {
   .tech-strip div,
   .telemetry-row div,
   .chart-log-grid > div:first-child,
-  .project-row dl div {
+  .project-row dl div,
+  .firmware-steps div {
     border-right: 0;
   }
 
   .mini-metrics div,
   .tech-strip div,
-  .telemetry-row div {
+  .telemetry-row div,
+  .firmware-steps div {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .firmware-hero,
+  .firmware-panel-main,
+  .firmware-detail {
+    padding: 26px 22px;
   }
 
   .project-row {

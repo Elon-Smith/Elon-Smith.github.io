@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description }}" />
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
+    <script
+      type="module"
+      src="{{ "vendor/esp-web-tools/install-button.js" | relURL }}"
+    ></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
+          <span class="brand-mark">IC</span>
+          <span>智能制造工作室 / Elon-Smith</span>
+        </a>
+        <nav class="topnav" aria-label="主导航">
+          <a href="{{ "firmware/" | relURL }}" aria-current="page">固件刷写</a>
+          <a href="{{ "/#skills" | relURL }}">技能</a>
+          <a href="{{ "/#notes" | relURL }}">记录</a>
+          <a href="{{ "/#contact" | relURL }}">联系</a>
+        </nav>
+        <div class="top-stats" aria-label="刷写要求">
+          <span><b>Chrome/Edge</b> 推荐浏览器</span>
+          <span><b>ESP32/8266</b> 目标设备</span>
+          <span><b>HTTPS</b> 安全访问</span>
+        </div>
+      </header>
+
+      <main class="firmware-page">
+        <section class="firmware-hero" aria-label="固件上传">
+          <div>
+            <p class="eyebrow live">Firmware Upload</p>
+            <h1>{{ .Title }}</h1>
+            <p class="hero-copy">
+              选择目标设备和固件版本，连接 USB 串口后在浏览器中完成写入。页面、固件清单和固件文件会随 Hugo 站点一起发布在 beining.uk 域名下。
+            </p>
+          </div>
+          <div class="firmware-status" aria-label="支持环境">
+            <span id="serialSupport">正在检测 Web Serial</span>
+            <span id="secureSupport">正在检测 HTTPS</span>
+          </div>
+        </section>
+
+        <section class="firmware-console" aria-label="固件上传面板">
+          <div class="firmware-panel-main">
+            <div class="section-heading compact">
+              <div>
+                <p class="eyebrow">Install</p>
+                <h2>选择固件并刷写</h2>
+              </div>
+            </div>
+
+            <label class="firmware-field" for="firmwareSelect">
+              <span>目标固件</span>
+              <select id="firmwareSelect">
+                <option
+                  value="{{ "firmware/esp32/manifest.json" | relURL }}"
+                  data-chip="ESP32"
+                  data-file="beining-esp32-firmware.bin"
+                  data-manifest="/firmware/esp32/manifest.json"
+                  data-boot="部分 ESP32 开发板需要按住 BOOT 再点击上传。"
+                >
+                  BEINING ESP32 固件 / v1.0.0
+                </option>
+                <option
+                  value="{{ "firmware/esp8266/manifest.json" | relURL }}"
+                  data-chip="ESP8266"
+                  data-file="beining-esp8266-firmware.bin"
+                  data-manifest="/firmware/esp8266/manifest.json"
+                  data-boot="部分 ESP8266 开发板需要按住 FLASH 再点击上传。"
+                >
+                  BEINING ESP8266 固件 / v1.0.0
+                </option>
+              </select>
+            </label>
+
+            <esp-web-install-button
+              id="installer"
+              manifest="{{ "firmware/esp32/manifest.json" | relURL }}"
+            >
+              <button class="flash-button" slot="activate" type="button">
+                连接 USB 并上传固件
+              </button>
+              <span slot="unsupported">
+                当前浏览器不支持 Web Serial，请使用桌面版 Chrome 或 Edge。
+              </span>
+              <span slot="not-allowed">
+                当前页面不是 HTTPS 或 localhost，浏览器禁止访问 USB 串口。
+              </span>
+            </esp-web-install-button>
+
+            <div class="firmware-note" aria-live="polite">
+              <b>写入提示</b>
+              <span data-firmware-boot>部分 ESP32 开发板需要按住 BOOT 再点击上传。</span>
+            </div>
+          </div>
+
+          <aside class="firmware-detail" aria-label="刷写信息">
+            <h2>发布信息</h2>
+            <dl>
+              <div>
+                <dt>页面地址</dt>
+                <dd>https://beining.uk/firmware/</dd>
+              </div>
+              <div>
+                <dt>固件清单</dt>
+                <dd data-firmware-manifest>/firmware/esp32/manifest.json</dd>
+              </div>
+              <div>
+                <dt>目标芯片</dt>
+                <dd data-firmware-chip>ESP32</dd>
+              </div>
+              <div>
+                <dt>固件文件</dt>
+                <dd data-firmware-file>beining-esp32-firmware.bin</dd>
+              </div>
+            </dl>
+          </aside>
+        </section>
+
+        <section class="firmware-steps" aria-label="刷写步骤">
+          <div>
+            <span>1</span>
+            <b>选择固件</b>
+            <p>先确认目标芯片，再选择对应的 BEINING 固件版本。</p>
+          </div>
+          <div>
+            <span>2</span>
+            <b>连接串口</b>
+            <p>在浏览器弹窗中选择 CH340、CP210x 或 USB Serial 端口。</p>
+          </div>
+          <div>
+            <span>3</span>
+            <b>等待写入</b>
+            <p>上传过程中保持页面打开，完成后按提示重启设备。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const firmwareSelect = document.getElementById("firmwareSelect");
+      const installer = document.getElementById("installer");
+      const serialSupport = document.getElementById("serialSupport");
+      const secureSupport = document.getElementById("secureSupport");
+
+      function updateFirmwareDetails() {
+        const option = firmwareSelect.selectedOptions[0];
+
+        installer.setAttribute("manifest", option.value);
+        document.querySelector("[data-firmware-chip]").textContent = option.dataset.chip;
+        document.querySelector("[data-firmware-file]").textContent = option.dataset.file;
+        document.querySelector("[data-firmware-manifest]").textContent = option.dataset.manifest;
+        document.querySelector("[data-firmware-boot]").textContent = option.dataset.boot;
+      }
+
+      firmwareSelect.addEventListener("change", updateFirmwareDetails);
+      updateFirmwareDetails();
+
+      serialSupport.textContent = "serial" in navigator
+        ? "Web Serial 可用"
+        : "Web Serial 不可用";
+      secureSupport.textContent = window.isSecureContext
+        ? "HTTPS 环境正常"
+        : "需要 HTTPS 或 localhost";
+    </script>
+  </body>
+</html>

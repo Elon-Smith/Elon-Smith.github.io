@@ -61,6 +61,32 @@ function drawChart() {
 
 drawChart();
 
+const siteAgeBlocks = document.querySelectorAll("[data-site-start]");
+
+function updateSiteAge() {
+  siteAgeBlocks.forEach((block) => {
+    const start = new Date(block.dataset.siteStart).getTime();
+    if (!Number.isFinite(start)) return;
+
+    const totalSeconds = Math.max(0, Math.floor((Date.now() - start) / 1000));
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    const pad = (value) => String(value).padStart(2, "0");
+
+    block.querySelector("[data-site-age-days]").textContent = String(days);
+    block.querySelector("[data-site-age-hours]").textContent = pad(hours);
+    block.querySelector("[data-site-age-minutes]").textContent = pad(minutes);
+    block.querySelector("[data-site-age-seconds]").textContent = pad(seconds);
+  });
+}
+
+if (siteAgeBlocks.length) {
+  updateSiteAge();
+  setInterval(updateSiteAge, 1000);
+}
+
 const tabs = document.querySelectorAll(".filter-tabs button");
 const rows = document.querySelectorAll(".project-row");
 
