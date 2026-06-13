@@ -726,12 +726,12 @@ canvas {
   margin-top: 28px;
 }
 
-#disqus_thread,
-.comments-fallback {
+.giscus,
+.comments-setup {
   position: relative;
 }
 
-.comments-fallback {
+.comments-setup {
   margin: 0;
   padding: 14px 16px;
   border: 1px solid rgba(139, 211, 242, 0.16);

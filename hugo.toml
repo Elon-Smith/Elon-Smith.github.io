@@ -6,6 +6,16 @@ disableKinds = ['taxonomy', 'term']
 [params]
 description = '智能制造工作室 / Elon-Smith 的个人网站'
 
-[services]
-  [services.disqus]
-    shortname = 'beining-uk'
+[params.giscus]
+repo = 'Elon-Smith/Elon-Smith.github.io'
+repoId = 'R_kgDOSyXKxQ'
+category = 'Announcements'
+categoryId = 'DIC_kwDOSyXKxc4C_FKT'
+mapping = 'pathname'
+strict = '0'
+reactionsEnabled = '1'
+emitMetadata = '0'
+inputPosition = 'bottom'
+theme = 'transparent_dark'
+lang = 'zh-CN'
+loading = 'lazy'

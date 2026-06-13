@@ -1,0 +1,30 @@
+{{- $giscus := .Site.Params.giscus -}}
+{{- $repo := $giscus.repo -}}
+{{- $repoID := $giscus.repoid -}}
+{{- $category := $giscus.category -}}
+{{- $categoryID := $giscus.categoryid -}}
+
+{{- if and $repo $repoID $category $categoryID -}}
+  <div class="giscus"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ $repo }}"
+    data-repo-id="{{ $repoID }}"
+    data-category="{{ $category }}"
+    data-category-id="{{ $categoryID }}"
+    data-mapping="{{ default "pathname" $giscus.mapping }}"
+    data-strict="{{ default "0" $giscus.strict }}"
+    data-reactions-enabled="{{ default "1" $giscus.reactionsenabled }}"
+    data-emit-metadata="{{ default "0" $giscus.emitmetadata }}"
+    data-input-position="{{ default "bottom" $giscus.inputposition }}"
+    data-theme="{{ default "transparent_dark" $giscus.theme }}"
+    data-lang="{{ default "zh-CN" $giscus.lang }}"
+    data-loading="{{ default "lazy" $giscus.loading }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+{{- else -}}
+  <p class="comments-setup">
+    评论系统正在迁移到 Giscus，启用 GitHub Discussions 后即可使用。
+  </p>
+{{- end -}}
