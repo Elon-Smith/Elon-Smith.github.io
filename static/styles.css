@@ -726,6 +726,21 @@ canvas {
   margin-top: 28px;
 }
 
+#disqus_thread,
+.comments-fallback {
+  position: relative;
+}
+
+.comments-fallback {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(139, 211, 242, 0.16);
+  border-radius: 8px;
+  color: var(--soft);
+  background: rgba(7, 18, 25, 0.72);
+  line-height: 1.65;
+}
+
 .skill-grid {
   display: flex;
   flex-wrap: wrap;
