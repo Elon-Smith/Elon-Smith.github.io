@@ -76,29 +76,6 @@ products:
       - "扇叶和防护框轻微灰尘。"
       - "充电、电池续航、各档风速和显示均正常。"
   -
-    id: "SH-004"
-    slug: "cuktech-power-bank-built-in-cable"
-    title: "CUKTECH 酷态科自带线充电宝10000mAh"
-    category: "数码配件 / 充电宝"
-    brand: "CUKTECH / 酷态科"
-    model: "P133L"
-    condition: "外壳有明显划痕"
-    confidence: "中高"
-    price: "8￡"
-    status: "draft"
-    sold: false
-    description: "便携自带线充电宝，适合手机日常补电。外置短线减少额外带线需求。"
-    basics: "黑色 CUKTECH 充电宝，带一体式短线/挂绳式线缆。标签较暗，可见快充规格和锂电池标识；功率与容量信息以机身铭牌为准。"
-    images:
-      - "/assets/secondhand/cuktech-power-bank-built-in-cable-img_6152.jpg"
-      - "/assets/secondhand/cuktech-power-bank-built-in-cable-img_6155.jpg"
-    source_images:
-      - "IMG_6152.JPEG"
-      - "IMG_6155.JPEG"
-    notes:
-      - "外壳划痕明显，铭牌不易读；接口、显示/电量状态和铭牌信息以实物为准。"
-      - "输入输出、线缆接口类型、容量衰减和快充支持情况以实物测试为准。"
-  -
     id: "SH-005"
     slug: "black-folding-mini-stand"
     title: "黑色折叠迷你支架 / 桌面三脚架"
@@ -161,29 +138,6 @@ products:
     notes:
       - "具体用途和数量以实物为准。"
       - "数量、承重、断裂或缺件情况以实物为准。"
-  -
-    id: "SH-008"
-    slug: "newmine-10000mah-power-bank"
-    title: "Newmine 10000mAh 多线充电宝"
-    category: "数码配件 / 充电宝"
-    brand: "Newmine"
-    model: "M138"
-    condition: "二手，有污渍和划痕，屏幕可亮"
-    confidence: "高"
-    price: "9￡"
-    status: "draft"
-    sold: false
-    description: "适合多设备临时补电，自带多种接口线，不需要额外携带数据线。"
-    basics: "白色 Newmine 移动电源，型号 `M138`，标注电池容量 `10000mAh / 37Wh / 3.7V`。背面自带多种线缆：USB、Micro-USB、Type-C、Lightning；正面有数显电量屏。"
-    images:
-      - "/assets/secondhand/newmine-10000mah-power-bank-img_6160.jpg"
-      - "/assets/secondhand/newmine-10000mah-power-bank-img_6161.jpg"
-    source_images:
-      - "IMG_6160.JPEG"
-      - "IMG_6161.JPEG"
-    notes:
-      - "机身有污渍和划痕；屏幕在照片中显示可点亮。"
-      - "每条线输出状态和电池容量衰减情况以实物测试为准。"
   -
     id: "SH-009"
     slug: "colorful-binder-clips-25mm"
