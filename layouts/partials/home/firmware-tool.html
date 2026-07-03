@@ -1,0 +1,15 @@
+{{ with hugo.Data.home.firmware_tool }}
+  <section class="tool-band" aria-label="固件工具入口">
+    <div>
+      <p class="eyebrow">{{ .eyebrow }}</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .description }}</p>
+      {{ with .facts }}
+        <div class="tool-facts">
+          {{ range . }}<span>{{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+    <a class="primary-cta" href="{{ .url | relURL }}">打开固件工具</a>
+  </section>
+{{ end }}

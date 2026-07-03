@@ -1,36 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description }}" />
-    <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
-    <script
-      type="module"
-      src="{{ "vendor/esp-web-tools/install-button.js" | relURL }}"
-    ></script>
-  </head>
+  {{ partial "site/head.html" . }}
   <body>
     <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
-          <span class="brand-mark">IC</span>
-          <span>智能制造工作室 / Elon-Smith</span>
-        </a>
-        <nav class="topnav" aria-label="主导航">
-          <a href="{{ "firmware/" | relURL }}" aria-current="page">固件刷写</a>
-          <a href="{{ "secondhand/" | relURL }}">二手闲置</a>
-          <a href="{{ "/#skills" | relURL }}">技能</a>
-          <a href="{{ "/#notes" | relURL }}">记录</a>
-          <a href="{{ "/#contact" | relURL }}">联系</a>
-        </nav>
-        <div class="top-stats" aria-label="刷写要求">
-          <span><b>Chrome/Edge</b> 推荐浏览器</span>
-          <span><b>ESP32/8266</b> 目标设备</span>
-          <span><b>HTTPS</b> 安全访问</span>
-        </div>
-      </header>
+      {{ partial "site/nav.html" . }}
 
       <main class="firmware-page">
         <section class="firmware-hero" aria-label="固件上传">
@@ -38,7 +11,7 @@
             <p class="eyebrow live">Firmware Upload</p>
             <h1>{{ .Title }}</h1>
             <p class="hero-copy">
-              选择目标设备和固件版本，连接 USB 串口后在浏览器中完成写入。页面、固件清单和固件文件会随 Hugo 站点一起发布在 beining.uk 域名下。
+              选择目标设备和固件版本，连接 USB 串口后在浏览器中完成写入。页面、固件清单和固件文件继续随 Hugo 站点发布在固定 URL 下。
             </p>
           </div>
           <div class="firmware-status" aria-label="支持环境">
@@ -75,7 +48,7 @@
                   data-manifest="/firmware/esp8266/manifest.json"
                   data-boot="ESP8266 使用完整 4MB 镜像，烧录地址 0x000000；如连接失败，请让设备进入下载模式后再点击上传。"
                 >
-                  陌生人数码杂货铺 /v1.0.1
+                  陌生人数码杂货铺 / v1.0.1
                 </option>
                 <option
                   value="{{ "firmware/esp8266/original-v1.0/manifest.json" | relURL }}"
@@ -84,7 +57,7 @@
                   data-manifest="/firmware/esp8266/original-v1.0/manifest.json"
                   data-boot="原版固件包含主程序 0x0 和文件系统 0x200000；请选择 ESP8266 串口，上传过程中不要断开设备。"
                 >
-                  原版固件 /v1.0
+                  原版固件 / v1.0
                 </option>
               </select>
             </label>
@@ -151,33 +124,11 @@
           </div>
         </section>
       </main>
+      {{ partial "site/footer.html" . }}
     </div>
 
-    <script>
-      const firmwareSelect = document.getElementById("firmwareSelect");
-      const installer = document.getElementById("installer");
-      const serialSupport = document.getElementById("serialSupport");
-      const secureSupport = document.getElementById("secureSupport");
-
-      function updateFirmwareDetails() {
-        const option = firmwareSelect.selectedOptions[0];
-
-        installer.setAttribute("manifest", option.value);
-        document.querySelector("[data-firmware-chip]").textContent = option.dataset.chip;
-        document.querySelector("[data-firmware-file]").textContent = option.dataset.file;
-        document.querySelector("[data-firmware-manifest]").textContent = option.dataset.manifest;
-        document.querySelector("[data-firmware-boot]").textContent = option.dataset.boot;
-      }
-
-      firmwareSelect.addEventListener("change", updateFirmwareDetails);
-      updateFirmwareDetails();
-
-      serialSupport.textContent = "serial" in navigator
-        ? "Web Serial 可用"
-        : "Web Serial 不可用";
-      secureSupport.textContent = window.isSecureContext
-        ? "HTTPS 环境正常"
-        : "需要 HTTPS 或 localhost";
-    </script>
+    {{ $firmwareJS := resources.Get "js/firmware-upload.js" | minify | fingerprint }}
+    <script type="module" src="{{ "vendor/esp-web-tools/install-button.js" | relURL }}"></script>
+    <script src="{{ $firmwareJS.RelPermalink }}" integrity="{{ $firmwareJS.Data.Integrity }}" defer></script>
   </body>
 </html>

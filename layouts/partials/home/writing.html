@@ -1,0 +1,26 @@
+<section class="home-section split-section" id="notes" aria-labelledby="notes-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Build Notes</p>
+      <h2 id="notes-title">创作记录</h2>
+    </div>
+  </div>
+  <div class="note-list">
+    {{ $posts := first 3 (where .Site.RegularPages "Section" "posts") }}
+    {{ if gt (len $posts) 0 }}
+      {{ range $posts }}
+        <a href="{{ .RelPermalink }}">
+          <strong>{{ .Title }}</strong>
+          <span>{{ default .Summary .Params.summary }}</span>
+        </a>
+      {{ end }}
+    {{ else }}
+      {{ range hugo.Data.home.notes }}
+        <article>
+          <strong>{{ .title }}</strong>
+          <span>{{ .summary }}</span>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>

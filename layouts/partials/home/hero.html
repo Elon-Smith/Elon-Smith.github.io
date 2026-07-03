@@ -1,0 +1,27 @@
+{{- $home := hugo.Data.home -}}
+{{- $profile := $home.profile -}}
+<section class="home-hero" aria-label="首页介绍">
+  <div class="hero-copy-block">
+    <p class="eyebrow">{{ $profile.eyebrow }}</p>
+    <h1>{{ $profile.title }}</h1>
+    <p>{{ $profile.description }}</p>
+    <div class="hero-actions">
+      {{ range $home.primary_links }}
+        <a href="{{ .url | relURL }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>
+      {{ end }}
+    </div>
+  </div>
+  <aside class="hero-profile-card" aria-label="身份信息">
+    <img src="{{ $profile.avatar | relURL }}" alt="{{ $profile.studio }} 头像" />
+    <div>
+      <span>{{ $profile.studio }}</span>
+      <strong>{{ $profile.name }}</strong>
+    </div>
+    {{ with $home.status }}
+      <ul>
+        <li>{{ .label }}</li>
+        {{ range .items }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    {{ end }}
+  </aside>
+</section>

@@ -1,0 +1,74 @@
+profile:
+  studio: "IC 智能制造工作室"
+  name: "Elon-Smith"
+  eyebrow: "Smart Hardware / IoT / Tools"
+  title: "智能硬件与物联网创作者"
+  description: "让电路、网络和真实设备协同工作。专注于智能硬件、物联网、嵌入式系统和实用工具的设计与实现。"
+  avatar: "/assets/avatar.png"
+
+primary_links:
+  - label: "GitHub"
+    url: "https://github.com/Elon-Smith"
+  - label: "OSHWHub"
+    url: "https://oshwhub.com/gbn2333/works"
+  - label: "查看项目"
+    url: "/projects/"
+  - label: "固件工具"
+    url: "/firmware/"
+
+metrics:
+  - label: "项目"
+    value: "28"
+  - label: "硬件设计"
+    value: "16"
+  - label: "设备在线"
+    value: "12"
+  - label: "提交次数"
+    value: "1,392"
+
+status:
+  label: "项目能力演示"
+  items:
+    - "MQTT / 4G 通信"
+    - "浏览器固件刷写"
+    - "开源工具维护"
+
+skills:
+  - PCB Design
+  - Air780E
+  - Lua
+  - MQTT
+  - 4G 通信
+  - SHT30
+  - ESP32
+  - TypeScript
+  - Gemini
+  - Obsidian
+
+firmware_tool:
+  eyebrow: "Firmware & Tools"
+  title: "浏览器固件刷写工具"
+  description: "在 Chrome 或 Edge 中通过 Web Serial 为 ESP32 / ESP8266 写入固件。固件清单继续保持在 /firmware/esp32/manifest.json 等静态路径下。"
+  url: "/firmware/"
+  facts:
+    - "Chrome / Edge"
+    - "HTTPS 或 localhost"
+    - "ESP32 / ESP8266"
+
+notes:
+  - title: "硬件复盘"
+    summary: "4G 模组联网、继电器控制与小程序联动的调试记录。"
+  - title: "工具开发"
+    summary: "把实时多模态、学习笔记和常用脚本整理成可复用项目。"
+  - title: "工程日志"
+    summary: "从 PCB、固件、云端到真实设备的闭环经验。"
+
+contact:
+  title: "一起把硬件想法做成真实设备"
+  description: "欢迎讨论智能硬件、IoT 原型、开源工具和个人项目合作。"
+  email: "gxbn_8848@163.com"
+  links:
+    - label: "GitHub"
+      url: "https://github.com/Elon-Smith"
+    - label: "OSHWHub"
+      url: "https://oshwhub.com/gbn2333/works"

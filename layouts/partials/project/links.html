@@ -1,0 +1,17 @@
+{{- $hasExplicitLinks := gt (len (default (slice) .Params.links)) 0 -}}
+{{- if or $hasExplicitLinks .Params.repo .Params.oshwhub .Params.docs .Params.demo -}}
+  <div class="project-links" aria-label="项目链接">
+    {{- range .Params.links -}}
+      {{- $name := default "Link" .name -}}
+      {{- with .url -}}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $name }}</a>
+      {{- end -}}
+    {{- end -}}
+    {{- if not $hasExplicitLinks -}}
+      {{- with .Params.repo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end -}}
+      {{- with .Params.oshwhub }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">OSHWHub</a>{{ end -}}
+      {{- with .Params.docs }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Docs</a>{{ end -}}
+      {{- with .Params.demo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">Demo</a>{{ end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

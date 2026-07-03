@@ -1,0 +1,17 @@
+{{- $projects := .Projects -}}
+<section class="home-section" aria-labelledby="featured-projects-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Featured Projects</p>
+      <h2 id="featured-projects-title">精选项目</h2>
+    </div>
+    <a class="section-link" href="{{ "projects/" | relURL }}">全部项目</a>
+  </div>
+  <div class="project-card-grid">
+    {{ range $projects }}
+      {{ partial "project/card.html" . }}
+    {{ else }}
+      <p class="empty-note">还没有精选项目。</p>
+    {{ end }}
+  </div>
+</section>

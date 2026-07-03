@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  {{ partial "site/head.html" . }}
+  <body>
+    <div class="site-shell">
+      {{ partial "site/nav.html" . }}
+      <main class="project-detail-page">
+        <article>
+          <header class="project-hero">
+            <div>
+              <p class="eyebrow">{{ default "Project" .Params.category }}</p>
+              <h1>{{ .Title }}</h1>
+              <p>{{ default .Summary .Params.summary }}</p>
+              <div class="project-hero-meta">
+                {{ partial "project/status-badge.html" . }}
+                {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2006-01-02" }}</time>{{ end }}
+                {{ with .Params.updated }}<span>更新 {{ . }}</span>{{ end }}
+              </div>
+              {{ with .Params.tags }}
+                <div class="tag-list">
+                  {{ range . }}<span>{{ . }}</span>{{ end }}
+                </div>
+              {{ end }}
+            </div>
+            <aside>
+              {{ partial "project/links.html" . }}
+            </aside>
+          </header>
+
+          {{ partial "project/gallery.html" . }}
+          {{ partial "project/safety-notice.html" . }}
+          {{ partial "project/hardware-spec.html" . }}
+
+          <section class="project-prose">
+            {{ .Content }}
+          </section>
+        </article>
+
+        {{ $projects := where .Site.RegularPages "Section" "projects" }}
+        {{ $sameCategory := where $projects ".Params.category" .Params.category }}
+        {{ $related := first 3 (where $sameCategory "RelPermalink" "!=" .RelPermalink) }}
+        {{ if gt (len $related) 0 }}
+          <section class="home-section related-projects" aria-labelledby="related-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Related</p>
+                <h2 id="related-title">同类项目</h2>
+              </div>
+            </div>
+            <div class="project-card-grid compact-grid">
+              {{ range $related }}
+                {{ partial "project/card.html" . }}
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      </main>
+      {{ partial "site/footer.html" . }}
+    </div>
+  </body>
+</html>

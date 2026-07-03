@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description }}" />
-    <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
-  </head>
+  {{ partial "site/head.html" . }}
   <body>
     {{ $allProducts := hugo.Data.secondhand.products.products }}
     {{ $visibleCount := 0 }}
@@ -25,24 +19,7 @@
     {{ end }}
 
     <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
-          <span class="brand-mark">IC</span>
-          <span>智能制造工作室 / Elon-Smith</span>
-        </a>
-        <nav class="topnav" aria-label="主导航">
-          <a href="{{ "firmware/" | relURL }}">固件刷写</a>
-          <a href="{{ "secondhand/" | relURL }}" aria-current="page">二手闲置</a>
-          <a href="{{ "/#skills" | relURL }}">技能</a>
-          <a href="{{ "/#notes" | relURL }}">记录</a>
-          <a href="{{ "/#contact" | relURL }}">联系</a>
-        </nav>
-        <div class="top-stats" aria-label="二手商品状态">
-          <span><b>{{ $visibleCount }}</b> 件在列</span>
-          <span><b>{{ $imageCount }}</b> 张图片</span>
-          <span><b>{{ $pricedCount }}</b> 个售价</span>
-        </div>
-      </header>
+      {{ partial "site/nav.html" . }}
 
       <main class="secondhand-page">
         <section class="secondhand-list-head" aria-label="二手闲置商品">
@@ -131,6 +108,7 @@
           </section>
         {{ end }}
       </main>
+      {{ partial "site/footer.html" . }}
     </div>
     <script>
       (() => {

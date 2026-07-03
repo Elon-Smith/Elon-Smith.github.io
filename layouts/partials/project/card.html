@@ -1,0 +1,43 @@
+{{- $page := . -}}
+{{- $cover := "" -}}
+{{- with .Params.cover -}}
+  {{- if hasPrefix . "/" -}}
+    {{- $cover = . -}}
+  {{- else -}}
+    {{- with $page.Resources.GetMatch . -}}
+      {{- $cover = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<article class="project-card">
+  <a class="project-card-main" href="{{ .RelPermalink }}" aria-label="查看 {{ .Title }}">
+    <div class="project-card-media">
+      {{ if $cover }}
+        <img src="{{ $cover | relURL }}" alt="{{ .Title }} 封面图" loading="lazy" />
+      {{ else }}
+        <div class="project-cover-fallback" aria-hidden="true">
+          <span>{{ substr .Title 0 2 }}</span>
+        </div>
+      {{ end }}
+    </div>
+    <div class="project-card-body">
+      <div class="project-card-meta">
+        <span>{{ default "project" .Params.category }}</span>
+        {{ partial "project/status-badge.html" . }}
+      </div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ default .Summary .Params.summary }}</p>
+      {{ with .Params.tags }}
+        <div class="tag-list" aria-label="技术标签">
+          {{ range first 6 . }}
+            <span>{{ . }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </a>
+  <div class="project-card-actions">
+    {{ partial "project/links.html" . }}
+    <a class="details-link" href="{{ .RelPermalink }}">查看详情</a>
+  </div>
+</article>

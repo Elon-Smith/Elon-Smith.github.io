@@ -1,0 +1,37 @@
+<section class="spec-grid" aria-label="项目规格">
+  {{ with .Params.hardware }}
+    {{ $communication := default (slice) .communication }}
+    {{ $sensors := default (slice) .sensors }}
+    {{ $outputs := default (slice) .outputs }}
+    {{ if or .mcu (gt (len $communication) 0) (gt (len $sensors) 0) .power_input (gt (len $outputs) 0) .pcb .risk }}
+      <div class="spec-panel">
+        <h2>Hardware</h2>
+        <dl>
+          {{ with .mcu }}<div><dt>MCU / SoC</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ if gt (len $communication) 0 }}<div><dt>通信</dt><dd>{{ delimit $communication " / " }}</dd></div>{{ end }}
+          {{ if gt (len $sensors) 0 }}<div><dt>传感器</dt><dd>{{ delimit $sensors " / " }}</dd></div>{{ end }}
+          {{ with .power_input }}<div><dt>电源输入</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ if gt (len $outputs) 0 }}<div><dt>输出</dt><dd>{{ delimit $outputs " / " }}</dd></div>{{ end }}
+          {{ with .pcb }}<div><dt>PCB</dt><dd>{{ . }}</dd></div>{{ end }}
+          {{ with .risk }}<div><dt>风险</dt><dd>{{ . }}</dd></div>{{ end }}
+        </dl>
+      </div>
+    {{ end }}
+  {{ end }}
+  {{ with .Params.software }}
+    {{ $languages := default (slice) .languages }}
+    {{ $platforms := default (slice) .platforms }}
+    {{ $protocols := default (slice) .protocols }}
+    {{ if or (gt (len $languages) 0) (gt (len $platforms) 0) (gt (len $protocols) 0) $.Params.license }}
+      <div class="spec-panel">
+        <h2>Software</h2>
+        <dl>
+          {{ if gt (len $languages) 0 }}<div><dt>语言</dt><dd>{{ delimit $languages " / " }}</dd></div>{{ end }}
+          {{ if gt (len $platforms) 0 }}<div><dt>平台</dt><dd>{{ delimit $platforms " / " }}</dd></div>{{ end }}
+          {{ if gt (len $protocols) 0 }}<div><dt>协议</dt><dd>{{ delimit $protocols " / " }}</dd></div>{{ end }}
+          {{ with $.Params.license }}<div><dt>License</dt><dd>{{ . }}</dd></div>{{ end }}
+        </dl>
+      </div>
+    {{ end }}
+  {{ end }}
+</section>

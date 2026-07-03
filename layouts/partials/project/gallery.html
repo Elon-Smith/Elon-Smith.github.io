@@ -1,0 +1,32 @@
+{{- $page := . -}}
+{{- $items := default (slice) .Params.gallery -}}
+{{- $cover := "" -}}
+{{- with .Params.cover -}}
+  {{- if hasPrefix . "/" -}}
+    {{- $cover = . -}}
+  {{- else -}}
+    {{- with $page.Resources.GetMatch . -}}{{- $cover = .RelPermalink -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if or (gt (len $items) 0) $cover -}}
+  <section class="project-gallery" aria-label="项目图片">
+    {{- if gt (len $items) 0 -}}
+      {{- range $items -}}
+        {{- $src := .src -}}
+        {{- $alt := default "项目图片" .alt -}}
+        {{- if and $src (not (hasPrefix $src "/")) -}}
+          {{- with $page.Resources.GetMatch $src -}}{{- $src = .RelPermalink -}}{{- end -}}
+        {{- end -}}
+        {{- with $src -}}
+          <figure>
+            <img src="{{ . | relURL }}" alt="{{ $alt }}" loading="lazy" />
+          </figure>
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      <figure>
+        <img src="{{ $cover | relURL }}" alt="{{ .Title }} 封面图" loading="lazy" />
+      </figure>
+    {{- end -}}
+  </section>
+{{- end -}}

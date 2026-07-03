@@ -1,0 +1,15 @@
+{{ with hugo.Data.home.contact }}
+  <section class="contact-band" id="contact" aria-label="联系">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>{{ .title }}</h2>
+      <p>{{ .description }}</p>
+    </div>
+    <div class="contact-actions">
+      <a href="mailto:{{ .email }}">{{ .email }}</a>
+      {{ range .links }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

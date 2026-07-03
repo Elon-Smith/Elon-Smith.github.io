@@ -1,0 +1,11 @@
+{{- $status := default "prototype" .Params.status -}}
+{{- $label := dict
+  "active" "维护中"
+  "prototype" "原型"
+  "stable" "稳定"
+  "archived" "归档"
+  "paused" "暂停"
+-}}
+<span class="status-badge status-{{ $status }}"{{ with .Params.status_note }} title="{{ . }}"{{ end }}>
+  {{ index $label $status | default $status }}
+</span>

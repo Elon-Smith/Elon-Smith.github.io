@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  {{ partial "site/head.html" . }}
+  <body>
+    <div class="site-shell">
+      {{ partial "site/nav.html" . }}
+      <main class="project-index-page">
+        <section class="page-hero">
+          <p class="eyebrow">Projects</p>
+          <h1>{{ .Title }}</h1>
+          <p>{{ default "智能硬件、IoT、固件和开源工具项目集合。" .Description }}</p>
+        </section>
+
+        <section class="project-list-toolbar" aria-label="项目维护说明">
+          <div>
+            <span>内容来源</span>
+            <strong>content/projects</strong>
+          </div>
+          <div>
+            <span>新增项目</span>
+            <strong>make new-project name=&lt;slug&gt;</strong>
+          </div>
+          <div>
+            <span>图片结构</span>
+            <strong>项目 leaf bundle</strong>
+          </div>
+        </section>
+
+        <section class="project-card-grid index-grid" aria-label="项目列表">
+          {{ range .Pages.ByWeight }}
+            {{ partial "project/card.html" . }}
+          {{ else }}
+            <p class="empty-note">还没有项目内容。</p>
+          {{ end }}
+        </section>
+      </main>
+      {{ partial "site/footer.html" . }}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{{ with hugo.Data.home.metrics }}
+  <section class="metric-strip" aria-label="站点统计">
+    {{ range . }}
+      <div>
+        <span>{{ .label }}</span>
+        <strong>{{ .value }}</strong>
+      </div>
+    {{ end }}
+  </section>
+{{ end }}
