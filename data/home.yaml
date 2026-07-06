@@ -31,7 +31,7 @@ status:
   items:
     - "MQTT / 4G 通信"
     - "浏览器固件刷写"
-    - "开源工具维护"
+    - "实用工具维护"
 
 skills:
   - PCB Design
@@ -65,7 +65,7 @@ notes:
 
 contact:
   title: "一起把硬件想法做成真实设备"
-  description: "欢迎讨论智能硬件、IoT 原型、开源工具和个人项目合作。"
+  description: "欢迎讨论智能硬件、IoT 原型、实用工具和个人项目合作。"
   email: "Lucas_GAO@proton.me"
   links:
     - label: "GitHub"

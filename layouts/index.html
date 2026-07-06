@@ -11,11 +11,9 @@
           {{ $featured = first 6 (sort $projects "Date" "desc") }}
         {{ end }}
         {{ $hardware := first 6 (sort (where $projects ".Params.category" "hardware") "Weight") }}
-        {{ $opensource := first 6 (sort (where $projects ".Params.category" "in" (slice "opensource" "tool" "firmware")) "Weight") }}
 
         {{ partial "home/hero.html" . }}
         {{ partial "home/featured-projects.html" (dict "Page" . "Projects" $featured) }}
-        {{ partial "home/open-source.html" (dict "Page" . "Projects" $opensource) }}
         {{ partial "home/firmware-tool.html" . }}
 
         <section class="home-section" id="skills" aria-labelledby="skills-title">

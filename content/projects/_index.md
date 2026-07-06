@@ -1,6 +1,6 @@
 ---
 title: "项目"
-description: "智能硬件、IoT、固件和开源工具项目集合。"
+description: "智能硬件、IoT、固件和实用工具项目集合。"
 url: "/projects/"
 ---
 

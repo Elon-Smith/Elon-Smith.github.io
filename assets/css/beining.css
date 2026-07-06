@@ -67,8 +67,31 @@ summary:focus-visible {
   grid-template-columns: minmax(220px, 1fr) auto;
 }
 
+.topnav {
+  --nav-fill: color-mix(in srgb, var(--bg) 82%, #05090c);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--nav-fill), var(--nav-fill)) padding-box,
+    linear-gradient(100deg, #38bdf8, #34d399, #fbbf24, #fb7185, #a78bfa, #38bdf8) border-box;
+  background-size: auto, 320% 100%;
+  animation: nav-rainbow-flow 5.6s linear infinite;
+  box-shadow:
+    0 0 22px rgba(56, 189, 248, 0.12),
+    inset 0 0 18px rgba(255, 255, 255, 0.03);
+}
+
 .topnav a {
   min-width: 82px;
+}
+
+@keyframes nav-rainbow-flow {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+
+  100% {
+    background-position: 0 0, 320% 50%;
+  }
 }
 
 .top-stats span {
@@ -101,10 +124,11 @@ summary:focus-visible {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.55fr);
-  gap: 28px;
-  min-height: 520px;
-  padding: clamp(28px, 5vw, 58px);
+  grid-template-columns: minmax(0, 1fr) minmax(232px, 300px);
+  align-items: center;
+  gap: clamp(24px, 4vw, 48px);
+  min-height: 0;
+  padding: clamp(30px, 4.2vw, 48px);
   overflow: hidden;
 }
 
@@ -133,7 +157,7 @@ summary:focus-visible {
 }
 
 .hero-copy-block {
-  align-self: end;
+  align-self: center;
   max-width: 780px;
 }
 
@@ -202,10 +226,14 @@ summary:focus-visible {
 }
 
 .hero-profile-card {
-  align-self: end;
+  align-self: center;
+  justify-items: center;
   display: grid;
   gap: 18px;
+  width: 100%;
+  max-width: 300px;
   padding: 24px;
+  text-align: center;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: color-mix(in srgb, var(--surface) 86%, transparent);
@@ -656,6 +684,12 @@ summary:focus-visible {
     white-space: normal;
   }
 
+  .hero-profile-card {
+    max-width: 100%;
+    justify-items: start;
+    text-align: left;
+  }
+
   .project-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -697,6 +731,10 @@ summary:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .topnav {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {
