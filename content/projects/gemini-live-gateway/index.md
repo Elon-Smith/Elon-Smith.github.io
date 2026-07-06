@@ -18,7 +18,7 @@ tags:
   - Multimodal
   - TypeScript
 
-cover: ""
+cover: "cover.png"
 license: "MIT"
 repo: "https://github.com/Elon-Smith/gemini-live-gateway"
 oshwhub: ""

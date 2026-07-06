@@ -17,11 +17,5 @@
       <span>{{ $profile.studio }}</span>
       <strong>{{ $profile.name }}</strong>
     </div>
-    {{ with $home.status }}
-      <ul>
-        <li>{{ .label }}</li>
-        {{ range .items }}<li>{{ . }}</li>{{ end }}
-      </ul>
-    {{ end }}
   </aside>
 </section>

@@ -1,14 +1,14 @@
 HUGO ?= hugo
 PS ?= powershell -NoProfile -ExecutionPolicy Bypass -Command
+CACHE_DIR ?= $(CURDIR)/resources/_cache
 
 .PHONY: dev build clean new-project check
 
 dev:
-	$(HUGO) server -D -F --disableFastRender --navigateToChanged --printPathWarnings
+	$(HUGO) server -D -F --disableFastRender --navigateToChanged --printPathWarnings --cacheDir "$(CACHE_DIR)"
 
 build:
-	$(PS) "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue public, 'resources/_gen'"
-	$(HUGO) --gc --minify --cleanDestinationDir --printPathWarnings
+	$(HUGO) --gc --minify --cleanDestinationDir --printPathWarnings --cacheDir "$(CACHE_DIR)"
 
 clean:
 	$(PS) "Remove-Item -Recurse -Force -ErrorAction SilentlyContinue public, resources"

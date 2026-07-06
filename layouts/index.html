@@ -14,9 +14,7 @@
         {{ $opensource := first 6 (sort (where $projects ".Params.category" "in" (slice "opensource" "tool" "firmware")) "Weight") }}
 
         {{ partial "home/hero.html" . }}
-        {{ partial "home/metrics.html" . }}
         {{ partial "home/featured-projects.html" (dict "Page" . "Projects" $featured) }}
-        {{ partial "home/hardware-lab.html" (dict "Page" . "Projects" $hardware) }}
         {{ partial "home/open-source.html" (dict "Page" . "Projects" $opensource) }}
         {{ partial "home/firmware-tool.html" . }}
 
@@ -34,7 +32,6 @@
           </div>
         </section>
 
-        {{ partial "home/writing.html" . }}
         {{ partial "home/contact.html" . }}
       </main>
       {{ partial "site/footer.html" . }}

@@ -17,7 +17,7 @@ tags:
   - English Learning
   - Automation
 
-cover: ""
+cover: "cover.png"
 license: ""
 repo: ""
 oshwhub: ""
