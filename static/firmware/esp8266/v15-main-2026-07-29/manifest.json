@@ -1,17 +1,17 @@
 {
-  "name": "Weather InkScreen A01 V15",
-  "version": "main-2026.07.29-62d9add",
+  "name": "【2.9寸A01】26-07-29 重构版",
+  "version": "26.07.29-74da6c0",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP8266",
       "parts": [
         {
-          "path": "weather-inkscreen-a01-v15-main-62d9add.bin",
+          "path": "weather-inkscreen-a01-v15-main-74da6c0.bin",
           "offset": 0
         },
         {
-          "path": "weather-inkscreen-a01-v15-filesystem-62d9add.bin",
+          "path": "weather-inkscreen-a01-v15-filesystem-74da6c0.bin",
           "offset": 2097152
         }
       ]

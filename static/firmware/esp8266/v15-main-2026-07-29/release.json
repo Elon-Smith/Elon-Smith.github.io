@@ -1,30 +1,49 @@
 {
   "source": {
     "repository": "https://github.com/Elon-Smith/Weather-InkScreen29",
-    "commit": "62d9add87ae047bfaa1487076891303b2553e7c3",
+    "branch": "main",
+    "commit": "74da6c09b8cefbb25b1128e91130174a3fa16160",
     "environment": "a01_v15_4m2m"
   },
+  "flashLayout": {
+    "flashSize": 4194304,
+    "applicationMaximumSize": 1044464,
+    "filesystemOffset": 2097152,
+    "filesystemSize": 2072576,
+    "filesystemEnd": 4169728,
+    "eepromOffset": 4173824,
+    "rfCalibrationOffset": 4177920,
+    "wifiConfigOffset": 4182016
+  },
   "application": {
-    "path": "weather-inkscreen-a01-v15-main-62d9add.bin",
+    "path": "weather-inkscreen-a01-v15-main-74da6c0.bin",
     "offset": 0,
-    "size": 919200,
-    "sha256": "57F43A0449DFEBE16D8FFDC1D2F36FBE0CD5129A8BCE90F82687D7EA4A70D727"
+    "size": 917488,
+    "sha256": "265F2256EA4C6B9598B68E73AC3F9456BB9FC81806063BD2EA145F93142ACE0F",
+    "imageHeader": "E9 02 02 4F",
+    "flashMode": "dio",
+    "flashFrequency": 80000000
   },
   "filesystem": {
-    "path": "weather-inkscreen-a01-v15-filesystem-62d9add.bin",
+    "path": "weather-inkscreen-a01-v15-filesystem-74da6c0.bin",
     "offset": 2097152,
     "size": 2072576,
-    "sha256": "31AB2E12589C1D3D9CE460D29FACC810966F4046498ED95353BCB94522C26FED",
+    "sha256": "A63999C664B7BB11C96B7CC845AEBE484C5B329251F469623A261024887DA6A2",
+    "compatibilityOverlay": {
+      "path": "edit/ace.js.gz",
+      "source": "previous verified production filesystem",
+      "sha256": "CDD6FCD9CC26EB8D021848A211185EA84A021CA1CF868FB1F103C5E29D0C0095"
+    },
     "requiredFiles": [
       "GCSBS.html.gz",
-      "bootstrap.min.css.gz",
-      "iziToast.min.css.gz",
-      "jquery.min.js.gz",
       "bootstrap.bundle.min.js.gz",
-      "iziToast.min.js.gz",
-      "favicon.ico.gz",
+      "bootstrap.min.css.gz",
+      "edit/ace.js.gz",
       "edit/index.htm.gz",
-      "edit/ace.js.gz"
+      "favicon.ico.gz",
+      "jquery.slim.min.js.gz",
+      "toast.css.gz",
+      "toast.js.gz"
     ]
   }
 }
