@@ -35,12 +35,12 @@
                 <option
                   value="{{ "firmware/esp8266/v15-main-2026-07-29/manifest.json" | relURL }}"
                   data-chip="ESP8266"
-                  data-file="weather-inkscreen-a01-v15-main-7e91f30.bin / weather-inkscreen-a01-v15-filesystem-a7.bin"
+                  data-file="weather-inkscreen-a01-v15-main-62d9add.bin / weather-inkscreen-a01-v15-filesystem-62d9add.bin"
                   data-manifest="/firmware/esp8266/v15-main-2026-07-29/manifest.json"
                   data-offset="0x000000 + 0x200000（全量写入）"
-                  data-boot="该固件仅供白名单用户使用，请选择 ESP8266 串口并下载CH340驱动，上传过程中不要断开设备。烧录后会完全清除设备内容。"
+                  data-boot="该固件仅供白名单用户使用。主程序与网页文件系统已配对验证；请选择 ESP8266 串口并安装 CH340 驱动，上传过程中不要断开设备。"
                   data-driver-url="https://www.wch.cn/downloads/CH341SER_ZIP.html"
-                  data-safety="安装器会先整片擦除设备，再写入 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。"
+                  data-safety="安装器会先整片擦除设备，再写入同一源码版本生成的 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。"
                   selected
                 >
                   Weather InkScreen A01 / main 2026-07-29
@@ -95,12 +95,12 @@
 
             <div class="firmware-note" aria-live="polite">
               <b>写入提示</b>
-              <span data-firmware-boot>该固件仅供白名单用户使用，请选择 ESP8266 串口并下载CH340驱动，上传过程中不要断开设备。烧录后会完全清除设备内容。</span>
+              <span data-firmware-boot>该固件仅供白名单用户使用。主程序与网页文件系统已配对验证；请选择 ESP8266 串口并安装 CH340 驱动，上传过程中不要断开设备。</span>
             </div>
 
             <div class="firmware-note" id="firmwareSafetyNotice" aria-live="polite">
               <b>完整写入</b>
-              <span>安装器会先整片擦除设备，再写入 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。</span>
+              <span>安装器会先整片擦除设备，再写入同一源码版本生成的 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。</span>
             </div>
           </div>
 
@@ -121,7 +121,7 @@
               </div>
               <div>
                 <dt>固件文件</dt>
-                <dd data-firmware-file>weather-inkscreen-a01-v15-main-7e91f30.bin / weather-inkscreen-a01-v15-filesystem-a7.bin</dd>
+                <dd data-firmware-file>weather-inkscreen-a01-v15-main-62d9add.bin / weather-inkscreen-a01-v15-filesystem-62d9add.bin</dd>
               </div>
               <div>
                 <dt>烧录偏移</dt>

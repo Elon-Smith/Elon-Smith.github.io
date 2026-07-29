@@ -46,6 +46,9 @@ jobs:
       - name: Verify Hugo
         run: hugo version
 
+      - name: Validate firmware release
+        run: node scripts/validate-firmware-release.mjs
+
       - name: Build
         run: |
           hugo \

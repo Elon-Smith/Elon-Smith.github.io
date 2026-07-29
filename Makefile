@@ -17,4 +17,6 @@ new-project:
 	$(PS) "if ('$(name)' -eq '') { Write-Error 'usage: make new-project name=my-project'; exit 1 }"
 	$(HUGO) new content "projects/$(name)/index.md"
 
-check: build
+check:
+	node scripts/validate-firmware-release.mjs
+	$(MAKE) build

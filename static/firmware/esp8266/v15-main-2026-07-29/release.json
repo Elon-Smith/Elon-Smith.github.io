@@ -1,0 +1,30 @@
+{
+  "source": {
+    "repository": "https://github.com/Elon-Smith/Weather-InkScreen29",
+    "commit": "62d9add87ae047bfaa1487076891303b2553e7c3",
+    "environment": "a01_v15_4m2m"
+  },
+  "application": {
+    "path": "weather-inkscreen-a01-v15-main-62d9add.bin",
+    "offset": 0,
+    "size": 919200,
+    "sha256": "57F43A0449DFEBE16D8FFDC1D2F36FBE0CD5129A8BCE90F82687D7EA4A70D727"
+  },
+  "filesystem": {
+    "path": "weather-inkscreen-a01-v15-filesystem-62d9add.bin",
+    "offset": 2097152,
+    "size": 2072576,
+    "sha256": "31AB2E12589C1D3D9CE460D29FACC810966F4046498ED95353BCB94522C26FED",
+    "requiredFiles": [
+      "GCSBS.html.gz",
+      "bootstrap.min.css.gz",
+      "iziToast.min.css.gz",
+      "jquery.min.js.gz",
+      "bootstrap.bundle.min.js.gz",
+      "iziToast.min.js.gz",
+      "favicon.ico.gz",
+      "edit/index.htm.gz",
+      "edit/ace.js.gz"
+    ]
+  }
+}
