@@ -3,9 +3,6 @@
   const installer = document.getElementById("installer");
   const serialSupport = document.getElementById("serialSupport");
   const secureSupport = document.getElementById("secureSupport");
-  const firmwareSafetyNotice = document.getElementById(
-    "firmwareSafetyNotice",
-  );
 
   if (!firmwareSelect || !installer) {
     return;
@@ -61,15 +58,6 @@
     setText("[data-firmware-manifest]", option.dataset.manifest || "");
     setText("[data-firmware-offset]", option.dataset.offset || "");
     renderBootNotice(option);
-
-    if (firmwareSafetyNotice) {
-      const safety = option.dataset.safety || "";
-      firmwareSafetyNotice.hidden = !safety;
-      const safetyText = firmwareSafetyNotice.querySelector("span");
-      if (safetyText) {
-        safetyText.textContent = safety;
-      }
-    }
   };
 
   firmwareSelect.addEventListener("change", updateFirmwareDetails);
