@@ -4,7 +4,7 @@ summary: "把 TED 字幕和学习材料整理成适合 Obsidian 的 Markdown 笔
 date: 2025-10-01
 updated: 2025-10-01
 draft: false
-featured: true
+featured: false
 weight: 30
 
 category: "tool"

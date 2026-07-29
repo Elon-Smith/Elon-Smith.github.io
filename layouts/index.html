@@ -34,5 +34,7 @@
       </main>
       {{ partial "site/footer.html" . }}
     </div>
+    {{ $featuredJS := resources.Get "js/featured-projects.js" | minify | fingerprint }}
+    <script src="{{ $featuredJS.RelPermalink }}" integrity="{{ $featuredJS.Data.Integrity }}" defer></script>
   </body>
 </html>

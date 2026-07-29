@@ -1,5 +1,5 @@
 {{- $projects := .Projects -}}
-<section class="home-section" aria-labelledby="featured-projects-title">
+<section class="home-section featured-projects-section" data-featured-projects aria-labelledby="featured-projects-title">
   <div class="section-heading">
     <div>
       <p class="eyebrow">Featured Projects</p>
@@ -7,11 +7,30 @@
     </div>
     <a class="section-link" href="{{ "projects/" | relURL }}">全部项目</a>
   </div>
-  <div class="project-card-grid">
-    {{ range $projects }}
-      {{ partial "project/card.html" . }}
-    {{ else }}
-      <p class="empty-note">还没有精选项目。</p>
-    {{ end }}
-  </div>
+  {{ if $projects }}
+    <div class="featured-marquee-frame">
+      <button class="featured-marquee-control featured-marquee-control-previous" type="button" data-featured-previous aria-label="向左翻页">
+        <img src="{{ "assets/icons/caret-left-bold.svg" | relURL }}" alt="" aria-hidden="true" />
+      </button>
+      <div
+        class="featured-marquee-viewport"
+        data-featured-viewport
+        role="region"
+        aria-label="精选项目横向展示，可使用左右按钮、方向键或手指滑动浏览"
+        tabindex="0">
+        <div class="featured-marquee-track" data-featured-track>
+          <div class="featured-marquee-set" data-featured-set>
+            {{ range $projects }}
+              {{ partial "home/featured-project-card.html" . }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <button class="featured-marquee-control featured-marquee-control-next" type="button" data-featured-next aria-label="向右翻页">
+        <img src="{{ "assets/icons/caret-right-bold.svg" | relURL }}" alt="" aria-hidden="true" />
+      </button>
+    </div>
+  {{ else }}
+    <p class="empty-note">还没有精选项目。</p>
+  {{ end }}
 </section>

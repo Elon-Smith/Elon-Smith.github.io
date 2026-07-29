@@ -58,7 +58,7 @@ category: "hardware"
 status: "prototype"
 ```
 
-`category` 可用值：`hardware`、`firmware`、`opensource`、`tool`、`notes`。
+`category` 可用值：`hardware`、`software`、`firmware`、`opensource`、`tool`、`notes`。
 
 ## 更新首页信息
 

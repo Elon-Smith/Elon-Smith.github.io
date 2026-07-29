@@ -35,15 +35,10 @@ status:
 
 skills:
   - PCB Design
-  - Air780E
-  - Lua
-  - MQTT
-  - 4G 通信
-  - SHT30
+  - LTE Cat.1 / 4G
   - ESP32
-  - TypeScript
-  - Gemini
-  - Obsidian
+  - WebRTC / Audio Processing
+  - SQLite
 
 firmware_tool:
   eyebrow: "Firmware & Tools"

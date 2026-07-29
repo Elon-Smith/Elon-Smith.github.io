@@ -1,26 +1,24 @@
 ---
 title: "4G 智能远程通断器"
-summary: "基于 Air780E 的 4G 无线通断器，支持小程序控制、4 路继电器、温湿度采集和 433MHz 本地遥控。"
+summary: "基于 Air780E 的 4G 四路远程通断器，支持小程序与 MQTT 控制、SHT30 温湿度采集和 433MHz 本地遥控。"
 date: 2024-01-19
 updated: 2025-03-24
 draft: false
 featured: true
-weight: 10
+weight: 20
 
 category: "hardware"
 status: "archived"
 status_note: "停止公开维护，仅保留技术资料和项目索引。"
 tags:
   - Air780E
-  - 4G
+  - LTE Cat.1
   - MQTT
   - Lua
   - SHT30
   - 433MHz
-  - Relay
-  - PCB
 
-cover: "/assets/relay-board-1.png"
+cover: "/assets/relay-board-1-card.jpg"
 license: "GPL-3.0"
 repo: "https://github.com/fairycloudpublic/FairyCloud_AIR780E_4DB_PUBLIC"
 oshwhub: "https://oshwhub.com/gbn2333/outdoor-camping-microwave-radar-alarm"
@@ -60,8 +58,8 @@ metrics:
 gallery:
   - src: "/assets/relay-board-1.png"
     alt: "4G 智能远程通断器硬件正面"
-  - src: "/assets/relay-board-2.png"
-    alt: "4G 智能远程通断器硬件侧面"
+  - src: "/assets/relay-board-2.webp"
+    alt: "4G 智能远程通断器设备外壳与控制面板"
 
 links:
   - name: "GitHub"

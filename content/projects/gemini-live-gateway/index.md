@@ -4,7 +4,7 @@ summary: "基于 Gemini Live API 的实时多模态网页和 OpenAI 兼容 API �
 date: 2026-06-12
 updated: 2026-06-12
 draft: false
-featured: true
+featured: false
 weight: 20
 
 category: "opensource"

@@ -35,25 +35,6 @@
             {{ .Content }}
           </section>
         </article>
-
-        {{ $projects := where .Site.RegularPages "Section" "projects" }}
-        {{ $sameCategory := where $projects ".Params.category" .Params.category }}
-        {{ $related := first 3 (where $sameCategory "RelPermalink" "!=" .RelPermalink) }}
-        {{ if gt (len $related) 0 }}
-          <section class="home-section related-projects" aria-labelledby="related-title">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">Related</p>
-                <h2 id="related-title">同类项目</h2>
-              </div>
-            </div>
-            <div class="project-card-grid compact-grid">
-              {{ range $related }}
-                {{ partial "project/card.html" . }}
-              {{ end }}
-            </div>
-          </section>
-        {{ end }}
       </main>
       {{ partial "site/footer.html" . }}
     </div>
