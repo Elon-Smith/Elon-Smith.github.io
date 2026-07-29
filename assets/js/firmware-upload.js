@@ -3,6 +3,9 @@
   const installer = document.getElementById("installer");
   const serialSupport = document.getElementById("serialSupport");
   const secureSupport = document.getElementById("secureSupport");
+  const firmwareSafetyNotice = document.getElementById(
+    "firmwareSafetyNotice",
+  );
 
   if (!firmwareSelect || !installer) {
     return;
@@ -15,6 +18,37 @@
     }
   };
 
+  const renderBootNotice = (option) => {
+    const target = document.querySelector("[data-firmware-boot]");
+    if (!target) {
+      return;
+    }
+
+    const notice = option.dataset.boot || "";
+    const driverLabel = "下载CH340驱动";
+    const driverIndex = notice.indexOf(driverLabel);
+    target.textContent = "";
+
+    if (!option.dataset.driverUrl || driverIndex < 0) {
+      target.textContent = notice;
+      return;
+    }
+
+    const driverLink = document.createElement("a");
+    driverLink.href = option.dataset.driverUrl;
+    driverLink.target = "_blank";
+    driverLink.rel = "noopener noreferrer";
+    driverLink.textContent = driverLabel;
+
+    target.append(
+      document.createTextNode(notice.slice(0, driverIndex)),
+      driverLink,
+      document.createTextNode(
+        notice.slice(driverIndex + driverLabel.length),
+      ),
+    );
+  };
+
   const updateFirmwareDetails = () => {
     const option = firmwareSelect.selectedOptions[0];
     if (!option) {
@@ -25,7 +59,17 @@
     setText("[data-firmware-chip]", option.dataset.chip || "");
     setText("[data-firmware-file]", option.dataset.file || "");
     setText("[data-firmware-manifest]", option.dataset.manifest || "");
-    setText("[data-firmware-boot]", option.dataset.boot || "");
+    setText("[data-firmware-offset]", option.dataset.offset || "");
+    renderBootNotice(option);
+
+    if (firmwareSafetyNotice) {
+      const safety = option.dataset.safety || "";
+      firmwareSafetyNotice.hidden = !safety;
+      const safetyText = firmwareSafetyNotice.querySelector("span");
+      if (safetyText) {
+        safetyText.textContent = safety;
+      }
+    }
   };
 
   firmwareSelect.addEventListener("change", updateFirmwareDetails);

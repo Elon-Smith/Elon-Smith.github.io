@@ -951,6 +951,16 @@ esp-web-install-button {
   color: var(--warning);
 }
 
+.firmware-note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.firmware-note a:hover {
+  color: var(--text);
+}
+
 .firmware-detail h2 {
   margin-bottom: 18px;
   font-size: 22px;

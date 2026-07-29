@@ -33,10 +33,24 @@
               <span>目标固件</span>
               <select id="firmwareSelect">
                 <option
+                  value="{{ "firmware/esp8266/v15-main-2026-07-29/manifest.json" | relURL }}"
+                  data-chip="ESP8266"
+                  data-file="weather-inkscreen-a01-v15-main-7e91f30.bin / weather-inkscreen-a01-v15-filesystem-a7.bin"
+                  data-manifest="/firmware/esp8266/v15-main-2026-07-29/manifest.json"
+                  data-offset="0x000000 + 0x200000（全量写入）"
+                  data-boot="该固件仅供白名单用户使用，请选择 ESP8266 串口并下载CH340驱动，上传过程中不要断开设备。烧录后会完全清除设备内容。"
+                  data-driver-url="https://www.wch.cn/downloads/CH341SER_ZIP.html"
+                  data-safety="安装器会先整片擦除设备，再写入 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。"
+                  selected
+                >
+                  Weather InkScreen A01 / main 2026-07-29
+                </option>
+                <option
                   value="{{ "firmware/esp32/manifest.json" | relURL }}"
                   data-chip="ESP32"
                   data-file="beining-esp32-firmware.bin"
                   data-manifest="/firmware/esp32/manifest.json"
+                  data-offset="0x000000（完整镜像）"
                   data-boot="部分 ESP32 开发板需要按住 BOOT 再点击上传。"
                 >
                   BEINING ESP32 固件 / v1.0.0
@@ -46,6 +60,7 @@
                   data-chip="ESP8266"
                   data-file="moshengren-digital-grocery-v1.0.1.bin"
                   data-manifest="/firmware/esp8266/manifest.json"
+                  data-offset="0x000000（完整 4MB 镜像）"
                   data-boot="ESP8266 使用完整 4MB 镜像，烧录地址 0x000000；如连接失败，请让设备进入下载模式后再点击上传。"
                 >
                   陌生人数码杂货铺 / v1.0.1
@@ -55,6 +70,7 @@
                   data-chip="ESP8266"
                   data-file="original-a01-015-03-a7.bin / original-filesystem-015-03-a7.bin"
                   data-manifest="/firmware/esp8266/original-v1.0/manifest.json"
+                  data-offset="0x000000 + 0x200000"
                   data-boot="原版固件包含主程序 0x0 和文件系统 0x200000；请选择 ESP8266 串口，上传过程中不要断开设备。"
                 >
                   原版固件 / v1.0
@@ -64,7 +80,7 @@
 
             <esp-web-install-button
               id="installer"
-              manifest="{{ "firmware/esp32/manifest.json" | relURL }}"
+              manifest="{{ "firmware/esp8266/v15-main-2026-07-29/manifest.json" | relURL }}"
             >
               <button class="flash-button" slot="activate" type="button">
                 连接 USB 并上传固件
@@ -79,7 +95,12 @@
 
             <div class="firmware-note" aria-live="polite">
               <b>写入提示</b>
-              <span data-firmware-boot>部分 ESP32 开发板需要按住 BOOT 再点击上传。</span>
+              <span data-firmware-boot>该固件仅供白名单用户使用，请选择 ESP8266 串口并下载CH340驱动，上传过程中不要断开设备。烧录后会完全清除设备内容。</span>
+            </div>
+
+            <div class="firmware-note" id="firmwareSafetyNotice" aria-live="polite">
+              <b>完整写入</b>
+              <span>安装器会先整片擦除设备，再写入 0x000000 主程序和 0x200000 文件系统。Wi-Fi、EEPROM 设置、书籍、图片及其他用户数据都会清除。</span>
             </div>
           </div>
 
@@ -92,15 +113,19 @@
               </div>
               <div>
                 <dt>固件清单</dt>
-                <dd data-firmware-manifest>/firmware/esp32/manifest.json</dd>
+                <dd data-firmware-manifest>/firmware/esp8266/v15-main-2026-07-29/manifest.json</dd>
               </div>
               <div>
                 <dt>目标芯片</dt>
-                <dd data-firmware-chip>ESP32</dd>
+                <dd data-firmware-chip>ESP8266</dd>
               </div>
               <div>
                 <dt>固件文件</dt>
-                <dd data-firmware-file>beining-esp32-firmware.bin</dd>
+                <dd data-firmware-file>weather-inkscreen-a01-v15-main-7e91f30.bin / weather-inkscreen-a01-v15-filesystem-a7.bin</dd>
+              </div>
+              <div>
+                <dt>烧录偏移</dt>
+                <dd data-firmware-offset>0x000000 + 0x200000（全量写入）</dd>
               </div>
             </dl>
           </aside>
