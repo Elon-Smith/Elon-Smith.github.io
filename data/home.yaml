@@ -43,12 +43,12 @@ skills:
 firmware_tool:
   eyebrow: "Firmware & Tools"
   title: "浏览器固件刷写工具"
-  description: "在 Chrome 或 Edge 中通过 Web Serial 为 ESP32 / ESP8266 写入固件。固件清单继续保持在 /firmware/esp32/manifest.json 等静态路径下。"
+  description: "在 Chrome 或 Edge 中通过 Web Serial 为 ESP8266 设备写入已发布固件。"
   url: "/firmware/"
   facts:
     - "Chrome / Edge"
     - "HTTPS 或 localhost"
-    - "ESP32 / ESP8266"
+    - "ESP8266"
 
 notes:
   - title: "硬件复盘"

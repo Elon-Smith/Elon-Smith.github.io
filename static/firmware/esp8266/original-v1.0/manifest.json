@@ -1,6 +1,6 @@
 {
   "name": "原版固件",
-  "version": "v1.0",
+  "version": "V15",
   "new_install_prompt_erase": true,
   "builds": [
     {

@@ -46,34 +46,14 @@
                   Weather InkScreen A01 / main 2026-07-29
                 </option>
                 <option
-                  value="{{ "firmware/esp32/manifest.json" | relURL }}"
-                  data-chip="ESP32"
-                  data-file="beining-esp32-firmware.bin"
-                  data-manifest="/firmware/esp32/manifest.json"
-                  data-offset="0x000000（完整镜像）"
-                  data-boot="部分 ESP32 开发板需要按住 BOOT 再点击上传。"
-                >
-                  BEINING ESP32 固件 / v1.0.0
-                </option>
-                <option
-                  value="{{ "firmware/esp8266/manifest.json" | relURL }}"
-                  data-chip="ESP8266"
-                  data-file="moshengren-digital-grocery-v1.0.1.bin"
-                  data-manifest="/firmware/esp8266/manifest.json"
-                  data-offset="0x000000（完整 4MB 镜像）"
-                  data-boot="ESP8266 使用完整 4MB 镜像，烧录地址 0x000000；如连接失败，请让设备进入下载模式后再点击上传。"
-                >
-                  陌生人数码杂货铺 / v1.0.1
-                </option>
-                <option
                   value="{{ "firmware/esp8266/original-v1.0/manifest.json" | relURL }}"
                   data-chip="ESP8266"
                   data-file="original-a01-015-03-a7.bin / original-filesystem-015-03-a7.bin"
                   data-manifest="/firmware/esp8266/original-v1.0/manifest.json"
                   data-offset="0x000000 + 0x200000"
-                  data-boot="原版固件包含主程序 0x0 和文件系统 0x200000；请选择 ESP8266 串口，上传过程中不要断开设备。"
+                  data-boot="V15 原版固件包含主程序 0x0 和文件系统 0x200000；请选择 ESP8266 串口，上传过程中不要断开设备。"
                 >
-                  原版固件 / v1.0
+                  V15 原版固件
                 </option>
               </select>
             </label>

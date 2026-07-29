@@ -8,25 +8,12 @@ and the LittleFS image built and verified from that same commit. Its manifest pe
 whole-chip erase before writing the application at `0x000000` and the
 filesystem at `0x200000`.
 
-The existing full 4MB factory image remains available as:
+The V15 original two-part firmware remains available in `original-v1.0/`:
 
 ```text
-moshengren-digital-grocery-v1.0.1.bin
+original-a01-015-03-a7.bin              offset 0x0
+original-filesystem-015-03-a7.bin       offset 0x200000
 ```
 
-Use this as a single full 4MB factory image at flash offset `0x000000`.
-The image already contains the app firmware, LittleFS data, and ESP8266 init data, so users do not need to flash separate parts.
-
-Recommended flashing settings:
-
-```text
-Chip: ESP8266
-Flash size: 4MB / 32Mbit
-Flash mode: DIO
-Flash frequency: 40MHz
-Offset: 0x000000
-```
-
-For ESP Web Tools, `manifest.json` points to `moshengren-digital-grocery-v1.0.1.bin` with `offset: 0`.
-
-The original two-part firmware used for comparison lives in `original-v1.0/`.
+`V14_Esp8266.bin` is retained as an unlisted archive and is not referenced by
+the firmware page or a manifest.
