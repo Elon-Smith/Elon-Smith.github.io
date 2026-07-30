@@ -33,16 +33,16 @@
               <span>目标固件</span>
               <select id="firmwareSelect">
                 <option
-                  value="{{ "firmware/esp8266/v15-main-2026-07-29/manifest.json" | relURL }}"
+                  value="{{ "firmware/esp8266/v15-main-2026-07-30/manifest.json" | relURL }}"
                   data-chip="ESP8266"
-                  data-file="weather-inkscreen-a01-v15-main-74da6c0.bin / weather-inkscreen-a01-v15-filesystem-74da6c0.bin"
-                  data-manifest="/firmware/esp8266/v15-main-2026-07-29/manifest.json"
-                  data-offset="0x000000 + 0x200000（全量写入）"
-                  data-boot="该固件仅供白名单用户使用。主程序与网页文件系统已配对验证；请选择 ESP8266 串口并安装 CH340 驱动，上传过程中不要断开设备。"
+                  data-file="weather-inkscreen-a01-v15-main-e6d65b3.bin / weather-inkscreen-a01-v15-filesystem-e6d65b3.bin"
+                  data-manifest="/firmware/esp8266/v15-main-2026-07-30/manifest.json"
+                  data-offset="0x000000 + 0x200000"
+                  data-boot="该固件仅供白名单用户使用。开始上传时会先清除整颗 Flash，设备原有内容将被完全删除；随后写入已配对验证的主程序与网页文件系统。请选择 ESP8266 串口并安装 CH340 驱动，上传过程中不要断开设备。"
                   data-driver-url="https://www.wch.cn/downloads/CH341SER_ZIP.html"
                   selected
                 >
-                  【2.9寸A01】26-07-29 重构版
+                  (2.9寸A01)260730-Refactored
                 </option>
                 <option
                   value="{{ "firmware/esp8266/original-v1.0/manifest.json" | relURL }}"
@@ -59,7 +59,7 @@
 
             <esp-web-install-button
               id="installer"
-              manifest="{{ "firmware/esp8266/v15-main-2026-07-29/manifest.json" | relURL }}"
+              manifest="{{ "firmware/esp8266/v15-main-2026-07-30/manifest.json" | relURL }}"
             >
               <button class="flash-button" slot="activate" type="button">
                 连接 USB 并上传固件
@@ -87,7 +87,7 @@
               </div>
               <div>
                 <dt>固件清单</dt>
-                <dd data-firmware-manifest>/firmware/esp8266/v15-main-2026-07-29/manifest.json</dd>
+                <dd data-firmware-manifest>/firmware/esp8266/v15-main-2026-07-30/manifest.json</dd>
               </div>
               <div>
                 <dt>目标芯片</dt>
@@ -95,7 +95,7 @@
               </div>
               <div>
                 <dt>固件文件</dt>
-                <dd data-firmware-file>weather-inkscreen-a01-v15-main-74da6c0.bin / weather-inkscreen-a01-v15-filesystem-74da6c0.bin</dd>
+                <dd data-firmware-file>weather-inkscreen-a01-v15-main-e6d65b3.bin / weather-inkscreen-a01-v15-filesystem-e6d65b3.bin</dd>
               </div>
               <div>
                 <dt>烧录偏移</dt>

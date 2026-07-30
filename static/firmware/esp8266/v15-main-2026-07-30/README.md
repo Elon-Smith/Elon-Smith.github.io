@@ -1,26 +1,25 @@
-# 【2.9寸A01】26-07-29 重构版
+# (2.9寸A01)260730-Refactored
 
 - Source branch: `main`
-- Source commit: `74da6c09b8cefbb25b1128e91130174a3fa16160`
+- Source commit: `e6d65b3a6c06c35630d94e8d90b0d16a1b477fde`
 - PlatformIO environment: `a01_v15_4m2m`
 - Target: ESP8266 / ESP-WROOM-02 / 4MB 4M2M / DIO / 80 MHz
 - Application offset: `0x000000`
 - Application maximum size: `1044464` bytes (`0xFEFF0`)
-- Application size: `917488` bytes (`0xDFFF0`)
-- Application SHA-256: `265F2256EA4C6B9598B68E73AC3F9456BB9FC81806063BD2EA145F93142ACE0F`
+- Application size: `923456` bytes (`0xE1740`)
+- Application SHA-256: `0C74E053DC43B9A9E7CC5E9F5FAFE13AA68ECC1D7717B1141B67B0ED5B2306C8`
 - Filesystem offset: `0x200000`
 - Filesystem size: `2072576` bytes (`0x1FA000`)
 - Filesystem end: `0x3FA000` (exclusive)
 - EEPROM offset: `0x3FB000`
 - RF calibration offset: `0x3FC000`
 - Wi-Fi configuration offset: `0x3FD000`
-- Filesystem SHA-256: `A63999C664B7BB11C96B7CC845AEBE484C5B329251F469623A261024887DA6A2`
+- Filesystem SHA-256: `E1AD78A05CC9B50105D9698B888B68177EA2ABBB4C1613C2BDBD75BECC441C2A`
 
-The application was built cleanly from the source commit above. The LittleFS
-image uses that commit's `data/` directory and retains the production
-`/edit/ace.js.gz` compatibility asset because the bundled editor references it.
-The finished image was unpacked and checked for the Wi-Fi configuration page,
-editor, and every referenced static asset.
+The application artifact was produced from the source commit above and
+revalidated with PlatformIO on 2026-07-30. The LittleFS image uses that
+commit's `data/` directory, including `/edit/ace.js.gz` for the bundled editor.
+The finished image was unpacked and all 18 files matched the source data.
 
 The addresses above come from `eagle.flash.4m2m.ld`. `0x3FA000` is the end of
 LittleFS, not the EEPROM start; EEPROM starts at `0x3FB000`.

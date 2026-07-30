@@ -9,14 +9,16 @@ const releaseDirectory = path.join(
   "static",
   "firmware",
   "esp8266",
-  "v15-main-2026-07-29",
+  "v15-main-2026-07-30",
 );
 const manifestPath = path.join(releaseDirectory, "manifest.json");
 const releasePath = path.join(releaseDirectory, "release.json");
 const templatePath = path.join(root, "layouts", "_default", "firmware.html");
 const stableManifestUrl =
-  "/firmware/esp8266/v15-main-2026-07-29/manifest.json";
-const releaseName = "【2.9寸A01】26-07-29 重构版";
+  "/firmware/esp8266/v15-main-2026-07-30/manifest.json";
+const releaseName = "(2.9寸A01)260730-Refactored";
+const eraseNotice =
+  "开始上传时会先清除整颗 Flash，设备原有内容将被完全删除";
 const expectedLittleFsFiles = [
   "GCSBS.html.gz",
   "bootstrap.bundle.min.js.gz",
@@ -125,6 +127,7 @@ assert(
 for (const expectedText of [
   stableManifestUrl,
   releaseName,
+  eraseNotice,
   release.application.path,
   release.filesystem.path,
 ]) {

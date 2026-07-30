@@ -1,17 +1,17 @@
 {
-  "name": "【2.9寸A01】26-07-29 重构版",
-  "version": "26.07.29-74da6c0",
+  "name": "(2.9寸A01)260730-Refactored",
+  "version": "26.07.30-e6d65b3",
   "new_install_prompt_erase": false,
   "builds": [
     {
       "chipFamily": "ESP8266",
       "parts": [
         {
-          "path": "weather-inkscreen-a01-v15-main-74da6c0.bin",
+          "path": "weather-inkscreen-a01-v15-main-e6d65b3.bin",
           "offset": 0
         },
         {
-          "path": "weather-inkscreen-a01-v15-filesystem-74da6c0.bin",
+          "path": "weather-inkscreen-a01-v15-filesystem-e6d65b3.bin",
           "offset": 2097152
         }
       ]

@@ -2,7 +2,7 @@
   "source": {
     "repository": "https://github.com/Elon-Smith/Weather-InkScreen29",
     "branch": "main",
-    "commit": "74da6c09b8cefbb25b1128e91130174a3fa16160",
+    "commit": "e6d65b3a6c06c35630d94e8d90b0d16a1b477fde",
     "environment": "a01_v15_4m2m"
   },
   "flashLayout": {
@@ -16,22 +16,22 @@
     "wifiConfigOffset": 4182016
   },
   "application": {
-    "path": "weather-inkscreen-a01-v15-main-74da6c0.bin",
+    "path": "weather-inkscreen-a01-v15-main-e6d65b3.bin",
     "offset": 0,
-    "size": 917488,
-    "sha256": "265F2256EA4C6B9598B68E73AC3F9456BB9FC81806063BD2EA145F93142ACE0F",
+    "size": 923456,
+    "sha256": "0C74E053DC43B9A9E7CC5E9F5FAFE13AA68ECC1D7717B1141B67B0ED5B2306C8",
     "imageHeader": "E9 02 02 4F",
     "flashMode": "dio",
     "flashFrequency": 80000000
   },
   "filesystem": {
-    "path": "weather-inkscreen-a01-v15-filesystem-74da6c0.bin",
+    "path": "weather-inkscreen-a01-v15-filesystem-e6d65b3.bin",
     "offset": 2097152,
     "size": 2072576,
-    "sha256": "A63999C664B7BB11C96B7CC845AEBE484C5B329251F469623A261024887DA6A2",
+    "sha256": "E1AD78A05CC9B50105D9698B888B68177EA2ABBB4C1613C2BDBD75BECC441C2A",
     "compatibilityOverlay": {
       "path": "edit/ace.js.gz",
-      "source": "previous verified production filesystem",
+      "source": "Weather-InkScreen29 data/edit/ace.js.gz",
       "sha256": "CDD6FCD9CC26EB8D021848A211185EA84A021CA1CF868FB1F103C5E29D0C0095"
     },
     "requiredFiles": [
