@@ -1,0 +1,20 @@
+{
+  "name": "(2.9寸A01)260801-ReaderUX",
+  "version": "26.08.01-e6d65b3-wt3ecd4b7",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP8266",
+      "parts": [
+        {
+          "path": "weather-inkscreen-a01-v15-reader-3ecd4b7.bin",
+          "offset": 0
+        },
+        {
+          "path": "weather-inkscreen-a01-v15-filesystem-3ecd4b7.bin",
+          "offset": 2097152
+        }
+      ]
+    }
+  ]
+}

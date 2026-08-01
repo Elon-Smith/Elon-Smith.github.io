@@ -9,14 +9,27 @@ const releaseDirectory = path.join(
   "static",
   "firmware",
   "esp8266",
-  "v15-main-2026-07-30",
+  "v15-reader-2026-08-01",
 );
 const manifestPath = path.join(releaseDirectory, "manifest.json");
 const releasePath = path.join(releaseDirectory, "release.json");
 const templatePath = path.join(root, "layouts", "_default", "firmware.html");
 const stableManifestUrl =
-  "/firmware/esp8266/v15-main-2026-07-30/manifest.json";
-const releaseName = "(2.9寸A01)260730-Refactored";
+  "/firmware/esp8266/v15-reader-2026-08-01/manifest.json";
+const releaseName = "(2.9寸A01)260801-ReaderUX";
+const releaseVersion = "26.08.01-e6d65b3-wt3ecd4b7";
+const sourceBaseCommit = "e6d65b3a6c06c35630d94e8d90b0d16a1b477fde";
+const sourceDiffObject = "3ecd4b79fb0c307383519424d1151f0d50ac9d3f";
+const sourceChangedFiles = [
+  "src/V15_AcceptanceTests.inc",
+  "src/V15_EEPROM.h",
+  "src/V15_EEPROM.inc",
+  "src/V15_FileManager.h",
+  "src/V15_FileManager.inc",
+  "src/V15_Reader.h",
+  "src/V15_Reader.inc",
+  "src/V15_Reader_UI.inc",
+];
 const eraseNotice =
   "开始上传时会先清除整颗 Flash，设备原有内容将被完全删除";
 const expectedLittleFsFiles = [
@@ -61,8 +74,19 @@ const template = await readFile(templatePath, "utf8");
 
 assert(manifest.name === releaseName, "unexpected manifest name");
 assert(
-  manifest.version.endsWith(release.source.commit.slice(0, 7)),
-  "manifest version does not identify the source commit",
+  manifest.version === releaseVersion,
+  "manifest version does not identify the source base and working-tree diff",
+);
+assert(release.source.commit === sourceBaseCommit, "unexpected source base commit");
+assert(
+  release.source.workingTree?.state === "modified" &&
+    release.source.workingTree.diffObject === sourceDiffObject,
+  "working-tree source state or diff object is missing",
+);
+assert(
+  JSON.stringify(release.source.workingTree.changedFiles) ===
+    JSON.stringify(sourceChangedFiles),
+  "working-tree changed-file inventory differs from the reviewed release",
 );
 assert(
   manifest.new_install_prompt_erase === false,
@@ -122,6 +146,18 @@ assert(
     release.filesystem.compatibilityOverlay.sha256 ===
       "CDD6FCD9CC26EB8D021848A211185EA84A021CA1CF868FB1F103C5E29D0C0095",
   "the editor compatibility asset differs from the locally verified image",
+);
+assert(
+  release.verification.applicationBuild === "passed" &&
+    release.verification.acceptanceBuild === "passed" &&
+    release.verification.littleFsFilesMatched === 18,
+  "release verification summary is incomplete",
+);
+assert(
+  release.verification.deviceFlashed === false &&
+    release.verification.readingUxHardwareValidated === false &&
+    release.verification.powerMeasured === false,
+  "unverified hardware or power results must not be presented as complete",
 );
 
 for (const expectedText of [

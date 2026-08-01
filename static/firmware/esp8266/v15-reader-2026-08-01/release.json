@@ -3,7 +3,21 @@
     "repository": "https://github.com/Elon-Smith/Weather-InkScreen29",
     "branch": "main",
     "commit": "e6d65b3a6c06c35630d94e8d90b0d16a1b477fde",
-    "environment": "a01_v15_4m2m"
+    "environment": "a01_v15_4m2m",
+    "workingTree": {
+      "state": "modified",
+      "diffObject": "3ecd4b79fb0c307383519424d1151f0d50ac9d3f",
+      "changedFiles": [
+        "src/V15_AcceptanceTests.inc",
+        "src/V15_EEPROM.h",
+        "src/V15_EEPROM.inc",
+        "src/V15_FileManager.h",
+        "src/V15_FileManager.inc",
+        "src/V15_Reader.h",
+        "src/V15_Reader.inc",
+        "src/V15_Reader_UI.inc"
+      ]
+    }
   },
   "flashLayout": {
     "flashSize": 4194304,
@@ -16,19 +30,19 @@
     "wifiConfigOffset": 4182016
   },
   "application": {
-    "path": "weather-inkscreen-a01-v15-main-e6d65b3.bin",
+    "path": "weather-inkscreen-a01-v15-reader-3ecd4b7.bin",
     "offset": 0,
-    "size": 923456,
-    "sha256": "0C74E053DC43B9A9E7CC5E9F5FAFE13AA68ECC1D7717B1141B67B0ED5B2306C8",
+    "size": 927888,
+    "sha256": "5CAE8F17A70F882212E8B117D7191C1D2081C3B3F76EB3B10326A20D51C6D1BE",
     "imageHeader": "E9 02 02 4F",
     "flashMode": "dio",
     "flashFrequency": 80000000
   },
   "filesystem": {
-    "path": "weather-inkscreen-a01-v15-filesystem-e6d65b3.bin",
+    "path": "weather-inkscreen-a01-v15-filesystem-3ecd4b7.bin",
     "offset": 2097152,
     "size": 2072576,
-    "sha256": "E1AD78A05CC9B50105D9698B888B68177EA2ABBB4C1613C2BDBD75BECC441C2A",
+    "sha256": "DCD4CA0C5A1C5F8FA8764B26AD029A58BAD37C37D2B9CFF53A556F34C350DEF1",
     "compatibilityOverlay": {
       "path": "edit/ace.js.gz",
       "source": "Weather-InkScreen29 data/edit/ace.js.gz",
@@ -45,5 +59,13 @@
       "toast.css.gz",
       "toast.js.gz"
     ]
+  },
+  "verification": {
+    "applicationBuild": "passed",
+    "acceptanceBuild": "passed",
+    "littleFsFilesMatched": 18,
+    "deviceFlashed": false,
+    "readingUxHardwareValidated": false,
+    "powerMeasured": false
   }
 }

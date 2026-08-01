@@ -83,7 +83,7 @@ content/projects/
 建议流程：
 
 1. 把新固件放到 `static/firmware/<device>/`。
-2. 更新对应 `manifest.json`，例如 `static/firmware/esp8266/v15-main-2026-07-30/manifest.json`。
+2. 更新对应 `manifest.json`，例如 `static/firmware/esp8266/v15-reader-2026-08-01/manifest.json`。
 3. 本地运行 `make dev`。
 4. 用 Chrome 或 Edge 访问 `http://localhost:1313/firmware/` 测试。
 5. 推送前运行 `make build`。
