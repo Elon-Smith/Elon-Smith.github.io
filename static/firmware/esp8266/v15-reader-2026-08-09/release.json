@@ -1,0 +1,61 @@
+{
+  "source": {
+    "repository": "https://github.com/Elon-Smith/Weather-InkScreen29",
+    "branch": "fix/reader-progress-persistence",
+    "commit": "93cc6ecb86dcd598b9a595fe1c85f2387ea6705a",
+    "environment": "a01_v15_4m2m",
+    "workingTree": {
+      "state": "clean",
+      "changedFiles": []
+    }
+  },
+  "flashLayout": {
+    "flashSize": 4194304,
+    "applicationMaximumSize": 1044464,
+    "filesystemOffset": 2097152,
+    "filesystemSize": 2072576,
+    "filesystemEnd": 4169728,
+    "eepromOffset": 4173824,
+    "rfCalibrationOffset": 4177920,
+    "wifiConfigOffset": 4182016
+  },
+  "application": {
+    "path": "weather-inkscreen-a01-v15-reader-93cc6ec.bin",
+    "offset": 0,
+    "size": 934624,
+    "sha256": "9D22DB8FFBBB236FB6CF3AD47DDF742108B1EC42DA8BA4192C63A17388C31E85",
+    "imageHeader": "E9 02 02 4F",
+    "flashMode": "dio",
+    "flashFrequency": 80000000
+  },
+  "filesystem": {
+    "path": "weather-inkscreen-a01-v15-filesystem-93cc6ec.bin",
+    "offset": 2097152,
+    "size": 2072576,
+    "sha256": "8977D8404D7F8D2180D111971792C9BAEA2554960D955910D4D37EB508F540B0",
+    "compatibilityOverlay": {
+      "path": "edit/ace.js.gz",
+      "source": "Weather-InkScreen29 data/edit/ace.js.gz",
+      "sha256": "CDD6FCD9CC26EB8D021848A211185EA84A021CA1CF868FB1F103C5E29D0C0095"
+    },
+    "requiredFiles": [
+      "GCSBS.html.gz",
+      "bootstrap.bundle.min.js.gz",
+      "bootstrap.min.css.gz",
+      "edit/ace.js.gz",
+      "edit/index.htm.gz",
+      "favicon.ico.gz",
+      "jquery.slim.min.js.gz",
+      "toast.css.gz",
+      "toast.js.gz"
+    ]
+  },
+  "verification": {
+    "applicationBuild": "passed",
+    "acceptanceBuild": "passed",
+    "littleFsFilesMatched": 18,
+    "deviceFlashed": false,
+    "readingUxHardwareValidated": false,
+    "powerMeasured": false
+  }
+}

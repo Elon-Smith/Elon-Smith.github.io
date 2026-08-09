@@ -2,10 +2,9 @@
 
 The firmware page publishes several ESP8266 packages. The current
 whitelist-only Weather InkScreen A01 release lives in
-`v15-reader-2026-08-01/` and contains the ReaderUX application image built
-from `Weather-InkScreen29` base commit
-`e6d65b3a6c06c35630d94e8d90b0d16a1b477fde` plus the recorded working-tree
-diff object `3ecd4b79fb0c307383519424d1151f0d50ac9d3f`, together with its verified
+`v15-reader-2026-08-09/` and contains the ReaderProgress application image
+built from `Weather-InkScreen29` commit
+`93cc6ecb86dcd598b9a595fe1c85f2387ea6705a`, together with its checked
 LittleFS package. Its manifest performs a whole-chip erase before writing the
 application at `0x000000` and the filesystem at `0x200000`. LittleFS ends at
 `0x3FA000`; EEPROM begins at `0x3FB000`.

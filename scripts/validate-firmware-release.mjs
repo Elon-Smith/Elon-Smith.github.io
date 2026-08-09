@@ -9,27 +9,18 @@ const releaseDirectory = path.join(
   "static",
   "firmware",
   "esp8266",
-  "v15-reader-2026-08-01",
+  "v15-reader-2026-08-09",
 );
 const manifestPath = path.join(releaseDirectory, "manifest.json");
 const releasePath = path.join(releaseDirectory, "release.json");
 const templatePath = path.join(root, "layouts", "_default", "firmware.html");
 const stableManifestUrl =
-  "/firmware/esp8266/v15-reader-2026-08-01/manifest.json";
-const releaseName = "(2.9寸A01)260801-ReaderUX";
-const releaseVersion = "26.08.01-e6d65b3-wt3ecd4b7";
-const sourceBaseCommit = "e6d65b3a6c06c35630d94e8d90b0d16a1b477fde";
-const sourceDiffObject = "3ecd4b79fb0c307383519424d1151f0d50ac9d3f";
-const sourceChangedFiles = [
-  "src/V15_AcceptanceTests.inc",
-  "src/V15_EEPROM.h",
-  "src/V15_EEPROM.inc",
-  "src/V15_FileManager.h",
-  "src/V15_FileManager.inc",
-  "src/V15_Reader.h",
-  "src/V15_Reader.inc",
-  "src/V15_Reader_UI.inc",
-];
+  "/firmware/esp8266/v15-reader-2026-08-09/manifest.json";
+const releaseName = "(2.9寸A01)260809-ReaderProgress";
+const releaseVersion = "26.08.09-93cc6ec";
+const sourceBranch = "fix/reader-progress-persistence";
+const sourceBaseCommit = "93cc6ecb86dcd598b9a595fe1c85f2387ea6705a";
+const sourceChangedFiles = [];
 const eraseNotice =
   "开始上传时会先清除整颗 Flash，设备原有内容将被完全删除";
 const expectedLittleFsFiles = [
@@ -75,13 +66,13 @@ const template = await readFile(templatePath, "utf8");
 assert(manifest.name === releaseName, "unexpected manifest name");
 assert(
   manifest.version === releaseVersion,
-  "manifest version does not identify the source base and working-tree diff",
+  "manifest version does not identify the source commit",
 );
+assert(release.source.branch === sourceBranch, "unexpected source branch");
 assert(release.source.commit === sourceBaseCommit, "unexpected source base commit");
 assert(
-  release.source.workingTree?.state === "modified" &&
-    release.source.workingTree.diffObject === sourceDiffObject,
-  "working-tree source state or diff object is missing",
+  release.source.workingTree?.state === "clean",
+  "source worktree is not recorded as clean",
 );
 assert(
   JSON.stringify(release.source.workingTree.changedFiles) ===
