@@ -14,7 +14,7 @@ products:
     model: "MQXJQ01KL"
     condition: "二手，有明显使用痕迹，建议清洁后使用"
     confidence: "高"
-    price: "3￡"
+    price: "1.5￡"
     status: "draft"
     sold: false
     description: "适合衣物、毛衣、围巾等织物表面除毛球使用。体积小，便携。"
@@ -39,7 +39,7 @@ products:
     model: "W2601-13 / W2605-06"
     condition: "外盒未拆封"
     confidence: "高"
-    price: "3￡"
+    price: "1.5￡"
     status: "draft"
     sold: false
     description: "迷你颗粒积木套装，适合桌面摆件或拼装收藏。"
@@ -61,7 +61,7 @@ products:
     model: "ZH28"
     condition: "二手，有灰尘和使用痕迹"
     confidence: "高"
-    price: "8￡"
+    price: "4￡"
     status: "draft"
     sold: false
     description: "可充电桌面小风扇，适合办公桌、床头或宿舍使用。USB-C 接口充电。"
@@ -84,7 +84,7 @@ products:
     model: "未知"
     condition: "二手，当前展示折叠状态照片"
     confidence: "中"
-    price: "3￡"
+    price: "1.5￡"
     status: "draft"
     sold: false
     description: "轻便折叠式支架，适合桌面拍摄、直播或手机/小设备支撑。"
@@ -105,7 +105,7 @@ products:
     model: "多型号混合"
     condition: "二手，有划痕"
     confidence: "高"
-    price: "1￡/个"
+    price: "0.5￡/个"
     status: "draft"
     sold: false
     description: "旅行或跨地区电器使用的插头转换套装，适合已有多国插头设备的人。"
@@ -126,7 +126,7 @@ products:
     model: "未知"
     condition: "二手/部分仍在塑料袋内，数量以实物为准"
     confidence: "中"
-    price: "2￡/个"
+    price: "1￡/个"
     status: "draft"
     sold: false
     description: "用于衣柜、衣架或挂放小物的收纳配件，可节省空间。"
@@ -147,7 +147,7 @@ products:
     model: "No.8554ES"
     condition: "已开封，数量以实物为准"
     confidence: "高"
-    price: "3￡/盒"
+    price: "1.5￡/盒"
     status: "draft"
     sold: false
     description: "适合文件整理、票据夹持、学习办公使用。"
@@ -168,7 +168,7 @@ products:
     model: "未知"
     condition: "二手，有表面划痕"
     confidence: "高"
-    price: "12￡"
+    price: "6￡"
     status: "draft"
     sold: false
     description: "适合笔记本或台式机日常办公使用，带接收器，即插即用。"
@@ -189,7 +189,7 @@ products:
     model: "姚记 No.990 等"
     condition: "外包装有塑封痕迹，塑封状态以实物为准"
     confidence: "高"
-    price: "2￡/套"
+    price: "1￡/套"
     status: "draft"
     sold: false
     description: "适合家庭娱乐、聚会、旅行携带。"
@@ -210,7 +210,7 @@ products:
     model: "未知"
     condition: "二手，有灰尘"
     confidence: "高"
-    price: "3￡"
+    price: "1.5￡"
     status: "draft"
     sold: false
     description: "可用于桌面收纳、文件、遥控器、文具或杂物整理。"
@@ -233,7 +233,7 @@ products:
     model: "以实物为准"
     condition: "二手，有外壳磨痕"
     confidence: "中高"
-    price: "10￡"
+    price: "5￡"
     status: "draft"
     sold: false
     description: "适合手机、平板、耳机等 USB 设备充电，一只充电器可同时连接多台设备。"
@@ -254,7 +254,7 @@ products:
     model: "牛油火锅底料"
     condition: "包装看起来未开封，日期以铭牌或包装标识为准"
     confidence: "高"
-    price: "2￡/包"
+    price: "1￡/包"
     status: "draft"
     sold: false
     description: "小包装牛油火锅底料，适合一人食或小锅使用。"
@@ -275,7 +275,7 @@ products:
     model: "未知"
     condition: "二手，配件齐全情况以实物为准"
     confidence: "高"
-    price: "7￡"
+    price: "3.5￡"
     status: "draft"
     sold: false
     description: "适合家用维修、家具组装、自行车或小型机械维护。"
@@ -296,7 +296,7 @@ products:
     model: "A4 Printer Paper"
     condition: "包装破损，实际张数以实物为准"
     confidence: "高"
-    price: "3￡/包"
+    price: "1.5￡/包"
     status: "draft"
     sold: false
     description: "A4 打印纸，可用于日常打印、草稿、学习和办公。"
@@ -317,7 +317,7 @@ products:
     model: "AC9140"
     condition: "二手，外壳有污渍和磨痕"
     confidence: "高"
-    price: "10￡"
+    price: "5￡"
     status: "draft"
     sold: false
     description: "大功率吹风机，适合日常干发和造型使用。"
@@ -340,7 +340,7 @@ products:
     model: "未知"
     condition: "二手，零散组合"
     confidence: "高"
-    price: "6￡"
+    price: "3￡"
     status: "draft"
     sold: false
     description: "适合日常家具装配、简单维修和应急使用。"
@@ -361,7 +361,7 @@ products:
     model: "以实物为准"
     condition: "二手，有外观污渍"
     confidence: "高"
-    price: "4￡"
+    price: "2￡"
     status: "draft"
     sold: false
     description: "适合桌面设备、手机、平板等同时供电。"
@@ -382,7 +382,7 @@ products:
     model: "以实物为准"
     condition: "二手，有轻微污渍"
     confidence: "高"
-    price: "15￡"
+    price: "7.5￡"
     status: "draft"
     sold: false
     description: "小型便携暖风机，适合桌边、房间局部取暖。"
@@ -403,7 +403,7 @@ products:
     model: "以实物为准"
     condition: "二手，有污渍"
     confidence: "中高"
-    price: "4￡"
+    price: "2￡"
     status: "draft"
     sold: false
     description: "适合桌面或床头多设备供电和 USB 充电。"
@@ -424,7 +424,7 @@ products:
     model: "以实物为准"
     condition: "二手"
     confidence: "中高"
-    price: "4￡"
+    price: "2￡"
     status: "draft"
     sold: false
     description: "英规插头插线板，适合英国插座环境下给多设备供电。"
@@ -445,7 +445,7 @@ products:
     model: "未知"
     condition: "二手，图片较模糊"
     confidence: "中"
-    price: "3￡"
+    price: "1.5￡"
     status: "draft"
     sold: false
     description: "小型延长线，适合低功率设备使用。"
@@ -466,7 +466,7 @@ products:
     model: "以实物为准"
     condition: "二手，有污渍"
     confidence: "高"
-    price: "4￡"
+    price: "2￡"
     status: "draft"
     sold: false
     description: "家用/办公插线板，适合多设备集中供电。"
@@ -487,7 +487,7 @@ products:
     model: "以实物为准"
     condition: "二手，有水垢和外观污渍"
     confidence: "高"
-    price: "15￡"
+    price: "7.5￡"
     status: "draft"
     sold: false
     description: "1.5L 电热水壶，适合日常烧水、办公室或宿舍使用。"
@@ -510,7 +510,7 @@ products:
     model: "以实物为准"
     condition: "二手，内盖和机身建议清洁后使用"
     confidence: "中高"
-    price: "20￡"
+    price: "10￡"
     status: "draft"
     sold: false
     description: "小容量迷你电饭煲，适合 1–2 人使用，可煮饭/粥等。"
@@ -531,7 +531,7 @@ products:
     model: "evolve+ multi-fit filter"
     condition: "滤水壶二手，滤芯包装状态与数量以实物为准"
     confidence: "高"
-    price: "19￡"
+    price: "9.5￡"
     status: "draft"
     sold: false
     description: "滤水壶与替换滤芯组合，适合日常饮水过滤使用。"
