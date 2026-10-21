@@ -90,16 +90,6 @@ content/projects/
 
 Web Serial 页面逻辑在 `assets/js/firmware-upload.js`，只由 `/firmware/` 模板加载。
 
-## 二手闲置
-
-`/secondhand/` 保留为辅助页面，入口放在页脚。商品数据集中维护在：
-
-```text
-data/secondhand/products.yaml
-```
-
-将商品 `sold` 改为 `true` 后，构建时会自动从列表隐藏。
-
 ## 推送前检查
 
 ```bash
@@ -107,4 +97,4 @@ git status --short
 make build
 ```
 
-确认 `/projects/`、`/projects/4g-remote-switch/`、`/firmware/` 和 `/secondhand/` 都能访问后再部署。
+确认 `/projects/`、`/projects/4g-remote-switch/` 和 `/firmware/` 都能访问后再部署。
