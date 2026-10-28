@@ -1,0 +1,13 @@
+<article class="portfolio-project">
+  <div class="project-kicker"><span>{{ .Params.display_category }}</span>{{ partial "project/status-badge.html" . }}</div>
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <p class="project-subtitle">{{ .Params.subtitle }}</p>
+  <p class="project-summary">{{ .Params.summary }}</p>
+  {{ partial "project/portfolio-media.html" (dict "Page" . "Home" true) }}
+  {{ with .Params.contribution }}<p class="project-contribution"><span>我的工作</span>{{ . }}</p>{{ end }}
+  <ul class="project-capabilities" aria-label="项目能力">{{ range .Params.capabilities }}<li>{{ . }}</li>{{ end }}</ul>
+  <div class="portfolio-project-links">
+    <a class="text-link" href="{{ .RelPermalink }}">了解项目</a>
+    {{ range .Params.links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a>{{ end }}
+  </div>
+</article>

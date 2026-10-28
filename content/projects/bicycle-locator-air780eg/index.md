@@ -4,7 +4,7 @@ summary: "基于 Air780EG 的低功耗 4G 自行车定位器，支持北斗/GPS 
 date: 2025-01-15
 updated: 2025-03-24
 draft: false
-featured: true
+featured: false
 weight: 10
 
 category: "hardware"

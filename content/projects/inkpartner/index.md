@@ -1,63 +1,71 @@
 ---
 title: "InkPartner"
-summary: "面向开源显示项目的内容型网站，以 RLCD 反射式液晶桌面信息屏为当前主项目，集中展示天气、日历、趋势与系统状态等设备界面。"
+subtitle: "把日历、天气与生活片段放到墨水屏上"
+summary: "将墨水屏设备、微信小程序与云端服务连接起来，让日历、天气、照片和留言进入日常生活，并持续改进设备交互与使用体验。"
+description: "Elon-Smith 独立开发的墨水屏设备与微信小程序项目，连接硬件、固件和云端，探索日历、天气、照片与留言场景。"
 date: 2026-07-15
-updated: 2026-07-27
+updated: 2026-10-28
 draft: false
 featured: true
-weight: 40
-
-category: "software"
-status: "active"
-status_note: "网站与项目内容持续维护中。"
+weight: 2
+category: "hardware"
+display_category: "智能硬件 / 物联网"
+status: "prototype"
+status_label: "开发验证中"
+status_note: "已完成设备、小程序与云端的开发和部分联调；持续验证真实设备的显示、功耗与稳定性。"
+contribution: "硬件设计、设备固件、微信小程序、云端服务与联调维护。独立完成，AI 辅助开发。"
+capabilities:
+  - 墨水屏设备
+  - 微信小程序
+  - 设备与云端联动
 tags:
-  - React
-  - TypeScript
-  - Vite
-  - SPA
-  - Responsive Images
-  - Content Driven
-
-cover: "cover.webp"
+  - ESP32
+  - 嵌入式固件
+  - 微信小程序
+  - BLE 配网
+cover: "miniapp-devices.png"
+showcase_layout: "phones"
+showcase:
+  - src: "miniapp-devices.png"
+    alt: "InkPartner 小程序设备入口的原生模拟器界面"
+  - src: "miniapp-display.png"
+    alt: "InkPartner 小程序选择日历、留言与相册显示内容的原生模拟器界面"
+showcase_caption: "小程序原生界面演示 · 游客入口与虚拟设备状态，非设备实拍"
 license: "Proprietary"
-repo: ""
-oshwhub: ""
-docs: ""
-demo: "https://inkpartner.cn/"
-
-hardware:
-  mcu: ""
-  communication: []
-  sensors: []
-  power_input: ""
-  outputs: []
-  pcb: ""
-  risk: ""
-
+links: []
 software:
-  languages:
-    - TypeScript
-  platforms:
-    - "React"
-    - "Vite"
-  protocols:
-    - "SPA"
-    - "Responsive Images"
-
-metrics: {}
-gallery: []
-
-links:
-  - name: "访问网站"
-    url: "https://inkpartner.cn/"
-
+  languages: [C / C++, TypeScript, Python]
+  platforms: [ESP-IDF, 微信小程序]
+  protocols: [BLE 配网, HTTPS]
 safety_notice: false
 ---
 
-## Overview
+## 解决的问题
 
-InkPartner 是面向个人开源显示项目的内容型网站。当前主项目为 RLCD 反射式液晶桌面信息屏，用真实设备界面展示天气概览、时钟、日历、温度趋势、逐小时天气、日出日落和系统信息。
+我希望日历、天气与生活中的照片、留言，能以更自然的方式出现在桌面上。InkPartner 将墨水屏与小程序连接起来，探索日常信息展示和家庭留言的使用方式。
 
-## Engineering
+## 使用方式
 
-网站采用 React、TypeScript 与 Vite，项目和站点信息由独立内容配置驱动，并使用 AVIF / WebP 响应式图片适配不同屏幕。文档、在线刷机与联系方式目前仍是状态页，因此详情文案不把这些入口描述成已经开放的功能。
+- **连接设备**：通过微信小程序完成蓝牙配网、设备认领与管理。
+- **选择内容**：在小程序中管理日历、天气、相册、诗词和留言等内容。
+- **等待显示**：云端保存内容与设置，设备在联网时获取更新，并回报显示状态。
+
+墨水屏的刷新与联网有自己的节奏。小程序会区分已提交的设置与设备实际完成显示的状态，帮助使用者理解操作进度。
+
+## 我的工作
+
+项目由我独立完成，AI 作为开发过程中的辅助工具。我负责硬件设计、设备固件、微信小程序、云端服务，以及这些环节之间的联调和持续维护。
+
+工作既包含设备端的显示、联网与电源管理，也包含小程序中的内容选择、设备管理和状态反馈。我关注每次操作能否从界面一路到达真实设备，并让结果易于理解。
+
+## 当前成果
+
+项目已形成墨水屏固件、小程序和云端服务，覆盖日历、天气、照片、留言等场景，并完成部分实体设备联调。
+
+目前仍处于开发与验证阶段，继续完善显示行为、功耗与稳定性。小程序开发版本、软件测试结果和部分实机结果分别记录，不将它们等同于正式量产或长期使用验收。
+
+页面图片来自小程序原生运行界面，使用游客入口或虚拟设备状态展示，不代表设备实拍。
+
+## 技术实现
+
+当前墨水屏设备基于 ESP32，固件负责联网与屏幕显示；微信小程序负责配网、设备和内容管理；云端负责业务逻辑及内容分发。系统通过明确的设备身份、指令与显示回报连接各个环节。

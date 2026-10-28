@@ -1,10 +1,10 @@
 baseURL = 'https://beining.uk/'
 locale = 'zh-cn'
-title = 'BEINING.UK'
+title = 'Elon-Smith · AI 应用与智能硬件'
 disableKinds = ['taxonomy', 'term']
 
 [params]
-description = '智能制造工作室的个人网站'
+description = '用 AI 和软硬件技术，把想法做成实用产品。Elon-Smith 的 AI 应用与智能硬件作品集。'
 
 [params.giscus]
 repo = 'Elon-Smith/Elon-Smith.github.io'

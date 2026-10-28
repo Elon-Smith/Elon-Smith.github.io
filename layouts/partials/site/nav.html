@@ -1,12 +1,12 @@
 <header class="topbar">
   <a class="brand" href="{{ "/" | relURL }}" aria-label="返回首页">
     <span class="brand-mark">IC</span>
-    <span>智能制造工作室</span>
+    <span>Elon-Smith</span>
   </a>
   <nav class="topnav" aria-label="主导航">
     <a href="{{ "projects/" | relURL }}"{{ if eq .Section "projects" }} aria-current="page"{{ end }}>项目</a>
     <a href="{{ "firmware/" | relURL }}"{{ if eq .RelPermalink ("/firmware/" | relURL) }} aria-current="page"{{ end }}>固件工具</a>
-    <a href="{{ "/#skills" | relURL }}">技能</a>
+    <a href="{{ "/#skills" | relURL }}">优势</a>
     <a href="{{ "/#contact" | relURL }}">联系</a>
   </nav>
 </header>

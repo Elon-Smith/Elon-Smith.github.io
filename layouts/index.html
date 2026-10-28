@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   {{ partial "site/head.html" . }}
-  <body>
-    <div class="site-shell portfolio-home">
-      {{ partial "site/nav.html" . }}
-      <main id="top">
-        {{ $projects := where .Site.RegularPages "Section" "projects" }}
-        {{ $featured := first 6 (sort (where $projects ".Params.featured" true) "Weight") }}
-        {{ if eq (len $featured) 0 }}
-          {{ $featured = first 6 (sort $projects "Date" "desc") }}
-        {{ end }}
-        {{ $hardware := first 6 (sort (where $projects ".Params.category" "hardware") "Weight") }}
-
-        {{ partial "home/hero.html" . }}
-        {{ partial "home/featured-projects.html" (dict "Page" . "Projects" $featured) }}
-        {{ partial "home/firmware-tool.html" . }}
-
-        <section class="home-section" id="skills" aria-labelledby="skills-title">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Skill Matrix</p>
-              <h2 id="skills-title">技能矩阵</h2>
-            </div>
+  <body class="portfolio-theme portfolio-front">
+    <a class="skip-link" href="#main-content">跳到作品内容</a>
+    {{ $home := hugo.Data.home }}
+    <div class="portfolio-layout">
+      <header class="profile-sidebar">
+        <a class="profile-identity" href="/" aria-label="Elon-Smith 首页">
+          <img src="{{ $home.profile.avatar | relURL }}" width="56" height="56" alt="Elon-Smith 的个人头像" />
+          <span>{{ $home.profile.name }}</span>
+        </a>
+        <p class="profile-field">{{ $home.profile.eyebrow }}</p>
+        <h1>{{ replace $home.profile.title "，" "，<br />" | safeHTML }}</h1>
+        <p class="profile-intro">{{ $home.profile.description }}</p>
+        <nav class="section-nav" aria-label="页内导航">
+          <a href="#work" aria-current="location"><span class="nav-rule" aria-hidden="true"></span>代表作品</a>
+          <a href="#skills"><span class="nav-rule" aria-hidden="true"></span>我的优势</a>
+          <a href="#contact"><span class="nav-rule" aria-hidden="true"></span>联系我</a>
+        </nav>
+        <div class="profile-contact">
+          <div class="profile-socials">
+            {{ range $home.primary_links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a>{{ end }}
           </div>
-          <div class="skill-grid">
-            {{ range hugo.Data.home.skills }}
-              <span>{{ . }}</span>
-            {{ end }}
+          <a class="profile-email" href="mailto:{{ $home.contact.email }}">{{ $home.contact.email }}</a>
+        </div>
+      </header>
+      <main id="main-content" class="portfolio-content" tabindex="-1">
+        <section id="work" aria-labelledby="work-title" class="portfolio-section work-section">
+          <div class="work-intro">
+            <h2 id="work-title" class="section-label">代表作品</h2>
+            <p>{{ $home.profile.authorship }}</p>
           </div>
+          {{ $projects := sort (where (where .Site.RegularPages "Section" "projects") ".Params.featured" true) "Weight" }}
+          {{ range $projects }}{{ partial "home/portfolio-project.html" . }}{{ end }}
+          <a class="quiet-link" href="{{ "projects/" | relURL }}">查看全部项目</a>
         </section>
-
-        {{ partial "home/contact.html" . }}
+        <section id="skills" aria-labelledby="skills-title" class="portfolio-section strengths-section">
+          <h2 id="skills-title" class="section-label">我的优势</h2>
+          {{ range $home.strengths }}
+            <article class="strength-row">
+              <h3>{{ .title }}</h3>
+              <div><p>{{ .description }}</p><p class="strength-example">{{ if .project }}<a href="{{ .project }}">{{ .example }}</a>{{ else }}{{ .example }}{{ end }}</p></div>
+            </article>
+          {{ end }}
+        </section>
+        <section id="contact" aria-labelledby="contact-title" class="portfolio-section portfolio-contact">
+          <p class="section-label">联系我</p>
+          <h2 id="contact-title">{{ $home.contact.title }}</h2>
+          <p>{{ $home.contact.description }}</p>
+          <a class="contact-email" href="mailto:{{ $home.contact.email }}">{{ $home.contact.email }}</a>
+        </section>
+        {{ partial "site/footer.html" . }}
       </main>
-      {{ partial "site/footer.html" . }}
     </div>
-    {{ $featuredJS := resources.Get "js/featured-projects.js" | minify | fingerprint }}
-    <script src="{{ $featuredJS.RelPermalink }}" integrity="{{ $featuredJS.Data.Integrity }}" defer></script>
+    {{ $js := resources.Get "js/portfolio.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   </body>
 </html>

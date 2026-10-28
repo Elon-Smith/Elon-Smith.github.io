@@ -1,0 +1,15 @@
+{{ $page := .Page }}
+{{ $isHome := .Home }}
+{{ with $page.Params.showcase }}
+  <figure class="showcase {{ if eq $page.Params.showcase_layout "phones" }}showcase-phones{{ else }}showcase-desktop{{ end }}">
+    <div class="showcase-images">
+      {{ range . }}
+        {{ $alt := .alt }}
+        {{ with $page.Resources.GetMatch .src }}
+          <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $alt }}" {{ if $isHome }}loading="lazy"{{ else }}loading="eager"{{ end }} decoding="async" />
+        {{ end }}
+      {{ end }}
+    </div>
+    <figcaption>{{ $page.Params.showcase_caption }}</figcaption>
+  </figure>
+{{ end }}

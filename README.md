@@ -1,6 +1,8 @@
 # BEINING.UK
 
-Hugo 个人站点，定位为智能硬件、IoT、固件工具和开源项目作品集。
+Hugo 个人作品集，中文展示 AI 应用与智能硬件实践。首页重点为 IELTS TODAY 和 InkPartner，其他项目和固件工具保留各自入口。
+
+构建版本与 GitHub Pages 一致：Hugo Extended 0.162.1。
 
 ## 本地预览
 
@@ -62,7 +64,7 @@ status: "prototype"
 
 ## 更新首页信息
 
-首页 Hero、按钮、统计、技能、固件工具入口、创作记录和联系方式集中维护在：
+首页个人介绍、个人链接、三项优势和联系方式集中维护在：
 
 ```text
 data/home.yaml
@@ -74,7 +76,22 @@ data/home.yaml
 content/projects/
 ```
 
-设置 `featured: true` 的项目会进入首页精选项目。
+设置 `featured: true` 的项目按 `weight` 顺序进入首页代表作品。项目 Markdown 可选字段：
+
+```yaml
+display_category: "AI 应用 / 语言学习"
+status_label: "持续维护"
+subtitle: "一句话说明使用价值"
+contribution: "个人职责摘要"
+capabilities: ["主要能力一", "主要能力二"]
+showcase_layout: "desktop" # 或 phones
+showcase:
+  - src: "interface.jpg"
+    alt: "具体界面说明"
+showcase_caption: "界面演示 · 使用虚拟示例数据"
+```
+
+界面图片保存在对应项目目录，保留原始宽高比例。截图更新时使用虚拟数据，并同步更新图注；实物照片须先核对设备型号。没有上述可选字段的旧项目仍使用原有封面和图库。
 
 ## 更新固件
 
@@ -94,6 +111,7 @@ Web Serial 页面逻辑在 `assets/js/firmware-upload.js`，只由 `/firmware/` 
 
 ```bash
 git status --short
+node scripts/validate-firmware-release.mjs
 make build
 ```
 

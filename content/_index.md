@@ -1,4 +1,4 @@
 +++
-title = 'BEINING.UK'
-description = '智能制造工作室的个人网站，展示智能硬件、物联网、4G 通信与实用工具项目。'
+title = 'Elon-Smith · AI 应用与智能硬件'
+description = '用 AI 和软硬件技术，把想法做成实用产品。了解 Elon-Smith 独立完成的 IELTS TODAY 与 InkPartner，以及从需求设计到开发维护的实践。'
 +++

@@ -4,7 +4,7 @@ summary: "基于 Air780E 的 4G 四路远程通断器，支持小程序与 MQTT 
 date: 2024-01-19
 updated: 2025-03-24
 draft: false
-featured: true
+featured: false
 weight: 20
 
 category: "hardware"
@@ -20,7 +20,7 @@ tags:
 
 cover: "/assets/relay-board-1-card.jpg"
 license: "GPL-3.0"
-repo: "https://github.com/fairycloudpublic/FairyCloud_AIR780E_4DB_PUBLIC"
+repo: ""
 oshwhub: "https://oshwhub.com/gbn2333/outdoor-camping-microwave-radar-alarm"
 docs: ""
 demo: ""
@@ -62,8 +62,6 @@ gallery:
     alt: "4G 智能远程通断器设备外壳与控制面板"
 
 links:
-  - name: "GitHub"
-    url: "https://github.com/fairycloudpublic/FairyCloud_AIR780E_4DB_PUBLIC"
   - name: "OSHWHub"
     url: "https://oshwhub.com/gbn2333/outdoor-camping-microwave-radar-alarm"
 
@@ -102,4 +100,4 @@ safety_notice: true
 
 ## Links
 
-项目代码和公开资料见页面上方链接。后续如果恢复维护，可以继续在本页补充固件版本、PCB 文件、图片图库和风险说明。
+公开硬件资料见页面上方的 OSHWHub 链接。原 GitHub 仓库目前无法公开访问，因此暂不提供代码入口。后续如果恢复维护，可以继续在本页补充固件版本、PCB 文件、图片图库和风险说明。

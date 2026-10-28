@@ -7,5 +7,5 @@
   "paused" "暂停"
 -}}
 <span class="status-badge status-{{ $status }}"{{ with .Params.status_note }} title="{{ . }}"{{ end }}>
-  {{ index $label $status | default $status }}
+  {{ .Params.status_label | default (index $label $status) | default $status }}
 </span>

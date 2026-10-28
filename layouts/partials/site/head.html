@@ -8,4 +8,13 @@
   <meta name="description" content="{{ $description }}" />
   <link rel="stylesheet" href="{{ "styles.css" | relURL }}" />
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" />
+  {{ if or .IsHome (eq .Section "projects") }}
+    {{ $portfolioStyle := resources.Get "css/portfolio.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $portfolioStyle.RelPermalink }}" integrity="{{ $portfolioStyle.Data.Integrity }}" />
+  {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <meta property="og:title" content="{{ $title }}" />
+  <meta property="og:description" content="{{ $description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ .Permalink }}" />
 </head>

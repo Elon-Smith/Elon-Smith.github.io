@@ -11,7 +11,7 @@
 {{- end -}}
 <article class="project-card">
   <a class="project-card-main" href="{{ .RelPermalink }}" aria-label="查看 {{ .Title }}">
-    <div class="project-card-media">
+    <div class="project-card-media{{ if eq .Params.showcase_layout "phones" }} media-phones{{ end }}">
       {{ if $cover }}
         <img src="{{ $cover | relURL }}" alt="{{ .Title }} 封面图" loading="lazy" />
       {{ else }}
